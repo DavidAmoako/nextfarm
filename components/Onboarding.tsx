@@ -9,7 +9,7 @@ import {
     Pressable
 } from 'react-native'
 import React from 'react'
-import slides from '@/app/slides'
+import slides from '../Data/slides'
 import OnboardingItem from './OnboardingItem'
 import Paginator from './Paginator'
 

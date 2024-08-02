@@ -4,34 +4,30 @@ import {
     StyleSheet,
     Text,
     View,
-    Pressable,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native'
+import { router, Router } from 'expo-router'
 
-export default function index() {
+export default function StartScreen() {
     return (
         <View style={styles.mainContainer}>
-            <View style={styles.headerContainer}>
-                <ThemedText type='subtitle'>Welcome to the</ThemedText>
-                <ThemedText type='subtitle'>TheNextFarm App</ThemedText>
-                <Image style={styles.logo} source={require('../assets/images/adaptive-icon.png')} />
+            <View style={styles.logoContainer}>
+                <Image style={styles.logo} source={require('../assets/images/logo.png')} />
+                <Text style={styles.logoText}><Text style={styles.the}>The</Text>NextFarm</Text>
             </View>
-            <View style={styles.loginContainer}>
-                <Text style={styles.loginText}>Login</Text>
-                <ThemedText type='link' style={styles.inputText}>Mobile Number</ThemedText>
-                <ThemedText type='link' style={styles.inputText}>Password</ThemedText>
-            </View>
-            <View style={styles.forgotPassword}>
-                <ThemedText type='link'> Forgot Password?</ThemedText>
-            </View>
-            <Pressable style={styles.button} onPress={() => { }}>
-                <Text style={styles.buttonText}>Login</Text>
-            </Pressable>
-            <View>
-                <ThemedText type='default' style={styles.loginText}>
-                    Are you new to this app?     <ThemedText type='link' style={styles.registerText} onPress={() => { }}>Register</ThemedText>
+            <TouchableOpacity style={styles.button} onPress={() => { router.replace('/tutorial') }}>
+                <Text style={styles.text}>Consumer</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => { router.replace('/tutorial') }}>
+                <Text style={styles.text}>Farmer</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => { }}>
+                <ThemedText type='default' style={styles.registerText}>
+                    Are you new to this app?     <ThemedText type='link' style={styles.registerText1}>Register</ThemedText>
                 </ThemedText>
-            </View>
+            </TouchableOpacity>
+            <Text style={styles.copyright}>© 2024 TheNextFarm</Text>
         </View>
     )
 }
@@ -39,55 +35,58 @@ export default function index() {
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: "#159e42",
         justifyContent: "flex-end",
         alignItems: "center"
     },
-    loginContainer: {
-
-    },
-    headerContainer: {
-        alignSelf: "center",
-        marginBottom: 30,
-        marginTop: 50
-    },
-    forgotPassword: {
-        alignSelf: "flex-end",
-        marginRight: 20,
-        marginBottom: 20
+    copyright: {
+        color: "#fff",
+        fontSize: 14,
+        padding: 20,
+        marginTop: 20,
+        textAlign: "center"
     },
     button: {
         elevation: 2,
-        backgroundColor: "#141517",
+        backgroundColor: "#fff",
         width: "90%",
         height: 60,
         borderRadius: 10,
         justifyContent: "center",
         alignItems: "center",
-        marginVertical: 15
+        marginVertical: 10
     },
-    loginText: {
-        fontWeight: "semibold",
-        fontSize: 18
-    },
-    inputText: {
-        fontSize: 16,
-        fontWeight: "bold",
-    },
-    buttonText: {
+    text: {
         fontSize: 19,
-        color: "#fff",
+        color: "#159e42",
         fontWeight: "bold"
     },
     registerText: {
-        fontSize: 18,
+        fontSize: 16,
+        color: "#000",
         fontWeight: "semibold",
     },
-    logo: {
-        width: 250,
-        height: 250,
-        resizeMode: "contain",
-        marginBottom: 30
+    registerText1: {
+        fontSize: 18,
+        color: "#fff",
+        fontWeight: "semibold",
     },
+    logoContainer: {
+        marginBottom: 100,
+        alignItems: "center"
+    },
+    logoText: {
+        fontSize: 35,
+        fontWeight: "bold",
+        color: "#fff"
+    },
+    logo: {
+        width: 300,
+        height: 300,
+        resizeMode: "contain"
+    },
+    the: {
+        color: "#ff5e03",
+    }
 
 })

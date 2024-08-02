@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 import React from 'react'
 import Onboarding from '@/components/Onboarding'
+import { router, Router } from 'expo-router'
 
 export default function TutorialPage() {
     return (
@@ -15,11 +16,11 @@ export default function TutorialPage() {
             <TouchableOpacity style={styles.button} onPress={() => { }}>
                 <Text style={styles.text}>Get Started</Text>
             </TouchableOpacity>
-            <View>
+            <TouchableOpacity onPress={() => { router.push('/index1') }}>
                 <ThemedText type='default' style={styles.loginText}>
-                    Already registered?     <ThemedText type='link' style={styles.loginText1} onPress={() => { }}>Login</ThemedText>
+                    Already registered?     <ThemedText type='link' style={styles.loginText1}>Login</ThemedText>
                 </ThemedText>
-            </View>
+            </TouchableOpacity>
         </View>
     )
 }
