@@ -16,10 +16,10 @@ export default function StartScreen() {
                 <Image style={styles.logo} source={require('../assets/images/logo.png')} />
                 <Text style={styles.logoText}><Text style={styles.the}>The</Text>NextFarm</Text>
             </View>
-            <TouchableOpacity style={styles.button} onPress={() => { router.replace('/tutorial') }}>
+            <TouchableOpacity activeOpacity={.5} style={styles.button} onPress={() => { router.replace('/(tabs)') }}>
                 <Text style={styles.text}>Consumer</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => { router.replace('/tutorial') }}>
+            <TouchableOpacity activeOpacity={.5} style={styles.button} onPress={() => { router.replace('/tutorial') }}>
                 <Text style={styles.text}>Farmer</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { }}>

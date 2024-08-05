@@ -42,7 +42,9 @@ export default function Example() {
                     <View style={styles.input}>
                         <Text style={styles.inputLabel}>Email address</Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <MaterialIcons name="email" size={28} color="green" />
+                            <View style={styles.iconContainer}>
+                                <MaterialIcons name="email" size={28} color="green" />
+                            </View>
                             <TextInput
                                 autoCapitalize="none"
                                 autoCorrect={false}
@@ -59,7 +61,9 @@ export default function Example() {
                     <View style={styles.input}>
                         <Text style={styles.inputLabel}>Password</Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <MaterialIcons name="lock-person" size={28} color="green" />
+                            <View style={styles.iconContainer}>
+                                <MaterialIcons name="lock-person" size={28} color="green" />
+                            </View>
                             <TextInput
                                 autoCorrect={false}
                                 clearButtonMode="while-editing"
@@ -175,6 +179,9 @@ const styles = StyleSheet.create({
         borderBottomColor: '#C9D3DB',
         borderBottomWidth: 1,
         borderStyle: 'solid',
+    },
+    iconContainer: {
+        marginHorizontal: 20,
     },
     /** Button */
     btn: {

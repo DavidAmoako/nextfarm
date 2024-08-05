@@ -2,24 +2,23 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 
 import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+//import { useColorScheme } from '@/hooks/useColorScheme';
 import { Ionicons } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  //const colorScheme = useColorScheme();
 
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: '#0C775D'/* Colors[colorScheme ?? 'light'].tint */,
-        tabBarStyle: { borderRadius: 20, paddingBottom: 10, bottom: 6, flexGrow: .03, elevation: 2 },
+        tabBarStyle: { paddingTop: 5, paddingBottom: 5, flexGrow: .02, },
         headerShown: false,
         tabBarShowLabel: false,
         //tabBarLabelStyle: { fontSize: 13, fontWeight: 'bold' },
-
+        tabBarHideOnKeyboard: true
       }}>
 
       <Tabs.Screen
@@ -27,7 +26,7 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'home' : 'home-outline'} size={26} color={focused ? '#0C775D' : '#000000'} />
+            <Ionicons name={focused ? 'home' : 'home-outline'} size={26} color={focused ? '#0C775D' : '#908f89'} />
           ),
         }}
       />
@@ -36,7 +35,7 @@ export default function TabLayout() {
         options={{
           title: 'Saved',
           tabBarIcon: ({ color, focused }) => (
-            <Octicons name={focused ? 'heart-fill' : 'heart'} size={26} color={focused ? '#0C775D' : '#000000'} />
+            <Ionicons name={focused ? 'heart' : 'heart-outline'} size={26} color={focused ? '#0C775D' : '#908f89'} />
           ),
         }}
       />
@@ -45,7 +44,7 @@ export default function TabLayout() {
         options={{
           title: 'Products',
           tabBarIcon: ({ color, focused }) => (
-            <Entypo name={focused ? 'shop' : 'shop'} size={26} color={focused ? '#0C775D' : '#000000'} />
+            <Entypo name={focused ? 'shop' : 'shop'} size={26} color={focused ? '#0C775D' : '#908f89'} />
           ),
         }}
       />
@@ -54,7 +53,7 @@ export default function TabLayout() {
         options={{
           title: 'Basket',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'cart' : 'cart-outline'} size={26} color={focused ? '#0C775D' : '#000000'} />
+            <Ionicons name={focused ? 'cart' : 'cart-outline'} size={26} color={focused ? '#0C775D' : '#908f89'} />
           ),
         }}
       />
@@ -63,7 +62,7 @@ export default function TabLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color, focused }) => (
-            <MaterialCommunityIcons name={focused ? 'account' : 'account-outline'} size={26} color={focused ? '#0C775D' : '#000000'} />
+            <FontAwesome5 name={focused ? 'user-alt' : 'user'} size={focused ? 22 : 24} color={focused ? '#0C775D' : '#908f89'} />
           ),
         }}
       />

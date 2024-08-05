@@ -1,3 +1,4 @@
+//import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
@@ -33,6 +34,7 @@ export default function RootLayout() {
         <Stack.Screen name="tutorial" options={{ headerShown: false }} />
         <Stack.Screen name="signIn" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(modals)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
