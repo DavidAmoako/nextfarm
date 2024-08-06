@@ -5,19 +5,20 @@ import {
     View
 } from 'react-native'
 import React from 'react'
+import { router, Router } from 'expo-router';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-export default function HeaderExtraSearch({ location, header }: { location: any, header: string }) {
+export default function HeaderExtraSearch({ header }: { header: string }) {
     return (
         <View style={styles.container}>
-            <Pressable style={styles.icon} onPress={() => { location }}>
+            <Pressable style={styles.icon} onPress={() => { router.back() }}>
                 <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
             </Pressable>
             <View style={styles.header}>
                 <Text style={styles.headerText}>{header}</Text>
             </View>
-            <Pressable style={styles.icon} onPress={() => { }}>
+            <Pressable style={styles.icon} onPress={() => { router.replace('/(modals)') }}>
                 <Ionicons name="search" size={24} color="black" />
             </Pressable>
         </View>

@@ -10,15 +10,15 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import React from 'react'
 import CategoryScroll from '@/components/CategoryScroll';
 import HeaderSearch from '@/components/HeaderSearch';
+import { router } from 'expo-router';
 
 export default function Search() {
 
-    const location = () => { };
     StatusBar.setBackgroundColor("#fff");
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <HeaderSearch location={location} />
+            <HeaderSearch />
             <View style={styles.container}>
                 <Text style={styles.heading}>Categories</Text>
                 <CategoryScroll />

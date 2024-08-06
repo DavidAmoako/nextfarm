@@ -7,9 +7,10 @@ import {
 import React, { useState } from 'react'
 import { router, Router } from 'expo-router';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 
-export default function HeaderSearch() {
+export default function HeaderSearchExtra() {
     const [text, setText] = useState('');
 
     return (
@@ -29,7 +30,9 @@ export default function HeaderSearch() {
                     style={styles.inputControl}
                     value={text} />
             </View>
-
+            <Pressable style={styles.back} onPress={() => { }}>
+                <MaterialCommunityIcons name="cart-outline" size={24} color="black" />
+            </Pressable>
         </View>
     )
 }

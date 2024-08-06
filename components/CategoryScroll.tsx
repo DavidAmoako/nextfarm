@@ -15,7 +15,7 @@ export default function CategoryScroll() {
     return (
         <View>
             <FlatList
-                style={{ marginBottom: 20 }}
+                style={{ marginBottom: 20, marginTop: 10 }}
                 data={categories}
                 renderItem={({ item }) => (
                     <Category

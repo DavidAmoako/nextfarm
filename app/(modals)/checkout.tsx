@@ -14,7 +14,6 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Octicons from '@expo/vector-icons/Octicons';
 import HeaderExtra from '@/components/HeaderExtra';
-import ButtonExtra from '@/components/ButtonBar';
 
 
 export default function Checkout() {

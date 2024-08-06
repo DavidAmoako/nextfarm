@@ -16,7 +16,7 @@ import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 
-export default function ProfileScreen() {
+export default function ShopProfileScreen() {
     return (
         <View>
             <Image style={styles.image} source={require('@/assets/images/profile-screen.jpg')} />

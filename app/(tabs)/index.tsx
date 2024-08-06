@@ -27,7 +27,7 @@ const height = StatusBar.currentHeight !== undefined ? StatusBar.currentHeight +
 const categories = ['Crazy Deals', 'Budget Buys', 'Best Offer', 'Flash Sales'];
 
 
-export default function HomeScreen() {
+export default function ShopHomeScreen() {
 
   const [category, setCategory] = useState(null);
   const [products, setProducts] = useState(data.products);
