@@ -20,7 +20,7 @@ export default function ShopProfileScreen() {
     return (
         <View>
             <Image style={styles.image} source={require('@/assets/images/profile-screen.jpg')} />
-            <TouchableOpacity activeOpacity={.5} style={styles.back} onPress={() => { router.navigate('/(tabs)') }}>
+            <TouchableOpacity activeOpacity={.5} style={styles.back} onPress={() => { router.replace('/(tabs)') }}>
                 <FontAwesome6 name="arrow-left-long" size={26} color="white" />
             </TouchableOpacity>
             <View style={styles.container}>

@@ -5,10 +5,11 @@ import {
     Image
 } from 'react-native'
 import React from 'react'
+import { router, Router } from 'expo-router'
 
 export default function ProductCard({ item }: { item: any }) {
     return (
-        <TouchableOpacity activeOpacity={0.5} style={styles.container}>
+        <TouchableOpacity activeOpacity={0.5} style={styles.container} onPress={() => { router.replace('/shop') }}>
             <Image source={item.image} style={styles.productImage} />
             {/* <Image source={require('../assets/images/contamination.png')} style={styles.productImage} /> */}
             <Text style={styles.productName}>{item.name}</Text>

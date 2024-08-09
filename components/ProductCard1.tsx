@@ -7,16 +7,18 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native'
 import { router, Router } from 'expo-router';
 
 
 export default function ProductCard1({ item, handleLiked }: { item: any, handleLiked: any }) {
 
-    const navigation = useNavigation();
+    //const navigation = useNavigation();
 
     return (
-        <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { }}>
+        <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { router.navigate({ pathname: '/items', params: { name: item.title } }) }}>
             <Image source={{ uri: item.image }} style={styles.coverImage} />
             <Text style={styles.name}>{item.title}</Text>
             <Text style={styles.name}>Product Description</Text>

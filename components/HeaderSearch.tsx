@@ -9,12 +9,20 @@ import { router, Router } from 'expo-router';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 
-export default function HeaderSearch() {
+export default function HeaderSearch(location: any) {
     const [text, setText] = useState('');
+
+    const goBack = () => {
+        if (router.canGoBack()) {
+            router.back()
+        } else {
+            router.navigate('/(tabs)')
+        }
+    }
 
     return (
         <View style={styles.container}>
-            <Pressable style={styles.back} onPress={() => { router.back() }}>
+            <Pressable style={styles.back} onPress={() => { goBack() }}>
                 <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
             </Pressable>
             <View style={styles.inputContainer}>
@@ -23,15 +31,14 @@ export default function HeaderSearch() {
                     autoCorrect={false}
                     clearButtonMode="while-editing"
                     keyboardType="email-address"
-                    onChangeText={text => setText(text)}
+                    onChangeText={(text: string) => setText(text)}
                     placeholder="Search items"
                     placeholderTextColor="#6b7280"
                     style={styles.inputControl}
                     value={text} />
             </View>
-
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({

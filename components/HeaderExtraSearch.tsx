@@ -10,15 +10,24 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function HeaderExtraSearch({ header }: { header: string }) {
+
+    const goBack = () => {
+        if (router.canGoBack()) {
+            router.back()
+        } else {
+            router.navigate('/(tabs)')
+        }
+    }
+
     return (
         <View style={styles.container}>
-            <Pressable style={styles.icon} onPress={() => { router.back() }}>
+            <Pressable style={styles.icon} onPress={() => { goBack() }}>
                 <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
             </Pressable>
             <View style={styles.header}>
                 <Text style={styles.headerText}>{header}</Text>
             </View>
-            <Pressable style={styles.icon} onPress={() => { router.replace('/(modals)') }}>
+            <Pressable style={styles.icon} onPress={() => { router.push('/(modals)') }}>
                 <Ionicons name="search" size={24} color="black" />
             </Pressable>
         </View>

@@ -12,10 +12,17 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function HeaderSearchExtra() {
     const [text, setText] = useState('');
+    const goBack = () => {
+        if (router.canGoBack()) {
+            router.back()
+        } else {
+            router.navigate('/shop')
+        }
+    }
 
     return (
         <View style={styles.container}>
-            <Pressable style={styles.back} onPress={() => { router.back() }}>
+            <Pressable style={styles.back} onPress={() => { goBack() }}>
                 <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
             </Pressable>
             <View style={styles.inputContainer}>
@@ -23,14 +30,15 @@ export default function HeaderSearchExtra() {
                     autoCapitalize="none"
                     autoCorrect={false}
                     clearButtonMode="while-editing"
-                    keyboardType="email-address"
+                    keyboardType="default"
                     onChangeText={text => setText(text)}
                     placeholder="Search items"
                     placeholderTextColor="#6b7280"
                     style={styles.inputControl}
                     value={text} />
+
             </View>
-            <Pressable style={styles.back} onPress={() => { }}>
+            <Pressable style={styles.back} onPress={() => { router.push('/cart') }}>
                 <MaterialCommunityIcons name="cart-outline" size={24} color="black" />
             </Pressable>
         </View>
@@ -65,6 +73,7 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         marginLeft: 10,
+        marginRight: 10,
         height: 45,
         backgroundColor: '#F2F2F2',
         borderRadius: 10,
