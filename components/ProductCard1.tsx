@@ -18,7 +18,16 @@ export default function ProductCard1({ item, handleLiked }: { item: any, handleL
     //const navigation = useNavigation();
 
     return (
-        <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { router.navigate({ pathname: '/items', params: { name: item.title } }) }}>
+        <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => {
+            router.navigate({
+                pathname: '/items', params: {
+                    image: item.image,
+                    title: item.title,
+                    price: item.price,
+                    discount: item.discount,
+                }
+            })
+        }}>
             <Image source={{ uri: item.image }} style={styles.coverImage} />
             <Text style={styles.name}>{item.title}</Text>
             <Text style={styles.name}>Product Description</Text>

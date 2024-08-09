@@ -20,7 +20,13 @@ const sizes = ['S', 'M', 'L'];
 export default function ProductItems() {
 
     StatusBar.setBackgroundColor("#fff");
-    const { name } = useLocalSearchParams();
+    const {
+        image,
+        title,
+        price,
+        discount
+    } = useLocalSearchParams();
+
 
     const [focused, setFocused] = useState(false);
     const [selectedSize, setSelectedSize] = useState<string | null>(null);
@@ -32,10 +38,10 @@ export default function ProductItems() {
             <HeaderExtraCart header='Product Details' />
             <ScrollView style={{ flex: 1, paddingTop: 20, paddingHorizontal: 10, marginBottom: 10 }} showsVerticalScrollIndicator={false}>
                 <View style={styles.imageContainer}>
-                    <Image source={require('@/assets/images/image.png')} style={styles.image} />
+                    <Image source={{ uri: image }} style={styles.image} />
                 </View>
                 <View style={{ marginBottom: 10 }}>
-                    <Text style={styles.productName}>Product Name </Text>
+                    <Text style={styles.productName}>{title}</Text>
                 </View>
                 <View style={{ flexDirection: "row", marginBottom: 30, justifyContent: "space-between", marginHorizontal: 10 }}>
                     <View>
@@ -47,7 +53,7 @@ export default function ProductItems() {
                             <Text style={styles.rating2}>(490)</Text>
                         </View>
                         <Text style={styles.priceText}>Price:</Text>
-                        <Text style={styles.price}>$340   <Text style={styles.discount}>$640</Text></Text>
+                        <Text style={styles.price}>${price}   <Text style={styles.discount}>${discount}</Text></Text>
 
                     </View>
                     <View>
@@ -68,13 +74,13 @@ export default function ProductItems() {
                     </View>
                 </View>
                 <View style={{ marginHorizontal: 5 }}>
-                    <Text>Description: </Text>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel faucibus mauris. Sed pulvinar, est et faucibus pulvinar, sapien neque varius turpis, at ultricies ligula lectus ut velit. Donec in turpis et dolor aliquet consectetur. Nulla facilisi. Sed vel nunc non urna ultricies consectetur. Sed vel nunc non urna ultricies consectetur.</Text>
+                    <Text style={styles.description}>Description: </Text>
+                    <Text style={styles.description1}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel faucibus mauris. Sed pulvinar, est et faucibus pulvinar, sapien neque varius turpis, at ultricies ligula lectus ut velit. Donec in turpis et dolor aliquet consectetur. Nulla facilisi. Sed vel nunc non urna ultricies consectetur. Sed vel nunc non urna ultricies consectetur.</Text>
                 </View>
             </ScrollView>
             <View style={styles.btnContainer}>
                 <AddandSub />
-                <TouchableOpacity activeOpacity={.5} style={styles.btn}>
+                <TouchableOpacity activeOpacity={.5} style={styles.btn} onPress={() => { router.replace('/cart') }}>
                     <Text style={styles.text}>Add To Cart</Text>
                 </TouchableOpacity>
             </View>
@@ -174,7 +180,7 @@ const styles = StyleSheet.create({
     image: {
         width: "100%",
         height: "100%",
-        borderRadius: 20,
+        borderRadius: 25,
         resizeMode: 'cover',
     },
     sizeContainer: {
@@ -196,5 +202,15 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginHorizontal: 5
+    },
+    description: {
+        marginBottom: 5,
+        fontSize: 16,
+        fontWeight: "500",
+    },
+    description1: {
+        fontSize: 14,
+        lineHeight: 20,
+        textAlign: "left"
     }
 })
