@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#f2f4f7"
-      }
+      },
+      "package": "com.sirxechs.nextfarm"
     },
     "web": {
       "bundler": "metro",
