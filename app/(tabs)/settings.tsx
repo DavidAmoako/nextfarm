@@ -45,7 +45,7 @@ export default function ShopProfileScreen() {
                         <Text style={styles.actionText}>Saved Addresses</Text>
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={.3} style={styles.actionButton}>
-                        <FontAwesome6 name="basket-shopping" size={22} color="black" style={{ marginHorizontal: 10 }} />
+                        <Ionicons name="basket-outline" size={24} color="black" style={{ marginHorizontal: 10 }} />
                         <Text style={styles.actionText}>Your Order</Text>
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={.3} style={styles.actionButton}>

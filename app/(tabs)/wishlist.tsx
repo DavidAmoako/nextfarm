@@ -3,14 +3,15 @@ import {
     Text,
     View,
     StatusBar,
-    Pressable,
-    TouchableOpacity
+    FlatList,
 } from 'react-native'
 import React from 'react'
 import { useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import HeaderExtraSearch from '@/components/HeaderExtraSearch';
 import CategoryScroll from '@/components/CategoryScroll';
+import WishlistCard from '@/components/WishlistCard';
+import wishlist from '@/Data/wishlist';
 
 
 
@@ -22,7 +23,14 @@ export default function Wishlist() {
             <HeaderExtraSearch header='Wishlist' />
             <View style={{ marginHorizontal: 10 }}>
                 <CategoryScroll />
-                <Text>wishlist</Text>
+                <FlatList
+                    data={wishlist}
+                    renderItem={({ item }) => (<WishlistCard item={item} />)}
+                    contentContainerStyle={{
+                        marginBottom: 10,
+                    }}
+                    showsVerticalScrollIndicator={false}
+                />
             </View>
         </SafeAreaView>
     )
