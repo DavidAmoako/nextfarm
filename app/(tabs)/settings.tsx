@@ -1,10 +1,11 @@
 import {
     Image,
     ScrollView,
+    StatusBar,
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View,
 } from 'react-native'
 import React from 'react'
 import { router, Router } from 'expo-router'
@@ -17,6 +18,9 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 
 export default function ShopProfileScreen() {
+
+    StatusBar.setHidden(true);
+
     return (
         <View>
             <Image style={styles.image} source={require('@/assets/images/profile-screen.jpg')} />
@@ -52,11 +56,11 @@ export default function ShopProfileScreen() {
                         <MaterialCommunityIcons name="truck-outline" size={24} color="black" style={{ marginHorizontal: 10 }} />
                         <Text style={styles.actionText}>Track Order</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={.3} style={styles.actionButton}>
+                    <TouchableOpacity activeOpacity={.3} style={styles.actionButton} onPress={() => { router.replace('/(tabs)/wishlist') }}>
                         <SimpleLineIcons name="present" size={24} color="black" style={{ marginHorizontal: 10 }} />
                         <Text style={styles.actionText}>Wishlist</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={.3} style={styles.actionButton}>
+                    <TouchableOpacity activeOpacity={.3} style={styles.actionButton} onPress={() => { router.replace('/signIn') }}>
                         <MaterialIcons name="logout" size={24} color="black" style={{ marginHorizontal: 10 }} />
                         <Text style={styles.actionText}>Logout</Text>
                     </TouchableOpacity>

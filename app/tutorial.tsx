@@ -13,10 +13,10 @@ export default function TutorialPage() {
     return (
         <View style={styles.container}>
             <Onboarding />
-            <TouchableOpacity style={styles.button} onPress={() => { }}>
+            <TouchableOpacity style={styles.button} onPress={() => { router.replace('/signIn') }}>
                 <Text style={styles.text}>Get Started</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => { router.push('/index1') }}>
+            <TouchableOpacity onPress={() => { router.replace('/signIn') }}>
                 <ThemedText type='default' style={styles.loginText}>
                     Already registered?     <ThemedText type='link' style={styles.loginText1}>Login</ThemedText>
                 </ThemedText>

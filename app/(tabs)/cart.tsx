@@ -26,7 +26,7 @@ export default function ShopCartScreen() {
     return (
         <SafeAreaView style={{ flex: 1, }}>
             <HeaderExtraSearch header='My Cart' />
-            <View style={{ flex: 1, marginHorizontal: 10 }}>
+            <View style={{ flex: 1, marginHorizontal: 10, marginTop: 10 }}>
                 <FlatList
                     data={wishlist}
                     renderItem={({ item }) => (<CartCard item={item} />)}

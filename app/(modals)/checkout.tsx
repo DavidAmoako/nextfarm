@@ -5,7 +5,9 @@ import {
     TouchableOpacity,
     TextInput,
     ScrollView,
-    StatusBar
+    StatusBar,
+    Modal,
+    Pressable
 } from 'react-native'
 import { useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
@@ -14,18 +16,20 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Octicons from '@expo/vector-icons/Octicons';
 import HeaderExtra from '@/components/HeaderExtra';
+import { router } from 'expo-router';
 
 
 export default function Checkout() {
 
-    const location = () => { };
+    const [modalVisible, setModalVisible] = useState(false);
+
     const [value, onChangeText] = useState('');
     StatusBar.setBackgroundColor('#fff');
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <HeaderExtra location={location} header='Checkout' />
-            <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20 }}>
+            <HeaderExtra header='Checkout' />
+            <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20, flex: 1 }}>
                 <TouchableOpacity activeOpacity={.5} style={styles.container}>
                     <View style={styles.icon}>
                         <Ionicons name="location-outline" size={24} color="#0C775D" />
@@ -91,6 +95,41 @@ export default function Checkout() {
                     </View>
                 </View>
             </ScrollView>
+            <View style={styles.btnContainer}>
+                <TouchableOpacity activeOpacity={.5} style={styles.btn} onPress={() => { setModalVisible(true) }}>
+                    <Text style={styles.text}>Submit Order</Text>
+                </TouchableOpacity>
+            </View>
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    setModalVisible(!modalVisible);
+                }}>
+                <View style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: "#fff"
+                }}>
+                    <View style={styles.modalView}>
+                        <View style={styles.outer}>
+                            <View style={styles.inner}>
+                                <Ionicons name="checkmark-sharp" size={40} color="#fff" />
+                            </View>
+                        </View>
+                        <Text style={styles.modalText}>Congratulations!</Text>
+                        <Text style={styles.modalSubText}>
+                            Your Order Successfully Delivered!
+                        </Text>
+
+                        <Pressable onPress={() => setModalVisible(!modalVisible)}>
+                            <Text style={styles.textStyle}>Done!</Text>
+                        </Pressable>
+                    </View>
+                </View>
+            </Modal>
         </SafeAreaView >
     )
 }
@@ -160,5 +199,77 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         marginBottom: 5
+    },
+    btnContainer: {
+        backgroundColor: "#fff",
+        width: "100%",
+        alignItems: "center",
+        paddingHorizontal: 20,
+        paddingTop: 13,
+        paddingBottom: 24,
+    },
+    btn: {
+        borderRadius: 39,
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingVertical: 17,
+        backgroundColor: "#0C775D",
+    },
+    text: {
+        fontSize: 16,
+        fontWeight: '500',
+        color: "#fff",
+    },
+    modalView: {
+        backgroundColor: 'white',
+        borderRadius: 20,
+        padding: 25,
+        width: '80%',
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
+    },
+    textStyle: {
+        color: '#0C775D',
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        textDecorationLine: 'underline',
+    },
+    modalText: {
+        marginBottom: 15,
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: '700',
+    },
+    modalSubText: {
+        marginBottom: 30,
+        textAlign: 'center',
+        fontSize: 14,
+        fontWeight: '500',
+    },
+    inner: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 85,
+        height: 85,
+        backgroundColor: '#159E42',
+        borderRadius: 45,
+    },
+    outer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 100,
+        height: 100,
+        backgroundColor: '#0C775D5D',
+        borderRadius: 50,
+        marginBottom: 15,
     },
 });

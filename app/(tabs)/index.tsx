@@ -75,7 +75,7 @@ export default function ShopHomeScreen() {
                 <Text style={styles.nameText}>{`Tomato Basket
 (L)`}</Text>
                 <Text style={styles.priceText}>$340   <Text style={styles.priceDiscountText}>$640</Text></Text>
-                <TouchableOpacity activeOpacity={0.5} style={styles.addButton}>
+                <TouchableOpacity activeOpacity={0.5} style={styles.addButton} onPress={() => { router.navigate('/cart') }}>
                   <Text style={styles.addText}>+  ADD</Text>
                 </TouchableOpacity>
               </View>
@@ -100,7 +100,7 @@ export default function ShopHomeScreen() {
               {/**Products Category */}
               <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                 <Text style={styles.categoryText}>Most Popular Products</Text>
-                <TouchableOpacity><Feather name="arrow-right-circle" size={24} color="black" /></TouchableOpacity>
+                <TouchableOpacity onPress={() => { router.replace('/shop') }}><Feather name="arrow-right-circle" size={24} color="black" /></TouchableOpacity>
               </View>
               <CategoryScroll />
             </View>

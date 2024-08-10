@@ -10,9 +10,13 @@ import {
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { MaterialIcons } from '@expo/vector-icons';
+import Feather from '@expo/vector-icons/Feather';
 import { router, Router } from 'expo-router';
 
 export default function Example() {
+
+    const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
+
     const [form, setForm] = useState({
         email: '',
         password: '',
@@ -57,6 +61,7 @@ export default function Example() {
                                 value={form.email} />
                         </View>
                     </View>
+                    <View style={styles.divider}></View>
 
                     <View style={styles.input}>
                         <Text style={styles.inputLabel}>Password</Text>
@@ -68,26 +73,31 @@ export default function Example() {
                                 autoCorrect={false}
                                 clearButtonMode="while-editing"
                                 onChangeText={password => setForm({ ...form, password })}
-                                placeholder="********"
+                                placeholder={isSecureTextEntry ? "********" : "password"}
                                 placeholderTextColor="#6b7280"
                                 style={styles.inputControl}
-                                secureTextEntry={true}
+                                secureTextEntry={isSecureTextEntry}
                                 value={form.password} />
+                            <TouchableOpacity onPress={() => { setIsSecureTextEntry(!isSecureTextEntry) }}>
+                                <Feather name={isSecureTextEntry ? "eye-off" : "eye"} size={24} color="black" />
+                            </TouchableOpacity>
                         </View>
                     </View>
+                    <View style={styles.divider}></View>
 
                     <View style={styles.formAction}>
                         <TouchableOpacity
+                            activeOpacity={.5}
+                            style={styles.btn}
                             onPress={() => {
-                                router.navigate('/tutorial')
+                                router.replace('/(tabs)')
                             }}>
-                            <View style={styles.btn}>
-                                <Text style={styles.btnText}>Login</Text>
-                            </View>
+                            <Text style={styles.btnText}>Login</Text>
                         </TouchableOpacity>
                     </View>
-
-                    <Text style={styles.formLink}>Forgot password?</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.formLink}>Forgot password?</Text>
+                    </TouchableOpacity>
                 </View>
             </KeyboardAwareScrollView>
 
@@ -158,7 +168,7 @@ const styles = StyleSheet.create({
     },
     /** Input */
     input: {
-        marginBottom: 16,
+        //marginBottom: 16,
     },
     inputLabel: {
         fontSize: 17,
@@ -168,20 +178,20 @@ const styles = StyleSheet.create({
     },
     inputControl: {
         height: 50,
-        width: "85%",
-        marginLeft: 5,
+        width: "80%",
+        //marginLeft: 5,
         //backgroundColor: '#fff',
         paddingHorizontal: 16,
         //borderRadius: 12,
         fontSize: 15,
         fontWeight: '500',
         color: '#222',
-        borderBottomColor: '#C9D3DB',
-        borderBottomWidth: 1,
-        borderStyle: 'solid',
+        // borderBottomColor: '#C9D3DB',
+        //borderBottomWidth: 1,
+        //borderStyle: 'solid',
     },
     iconContainer: {
-        marginHorizontal: 20,
+        marginLeft: 10,
     },
     /** Button */
     btn: {
@@ -202,4 +212,9 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         color: '#fff',
     },
+    divider: {
+        borderColor: "#141517",
+        borderWidth: .5,
+        marginBottom: 16,
+    }
 });
