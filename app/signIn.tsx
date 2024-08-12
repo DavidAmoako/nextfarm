@@ -7,6 +7,7 @@ import {
     Text,
     TouchableOpacity,
     TextInput,
+    StatusBar
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -23,6 +24,13 @@ export default function Example() {
     });
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#e8ecf4' }}>
+            <StatusBar
+                animated={true}
+                backgroundColor="#e8ecf4"
+                showHideTransition={"fade"}
+                barStyle={"dark-content"}
+                hidden={false}
+            />
             <KeyboardAwareScrollView>
                 <View style={styles.header}>
                     <Image
@@ -47,7 +55,7 @@ export default function Example() {
                         <Text style={styles.inputLabel}>Email address</Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={styles.iconContainer}>
-                                <MaterialIcons name="email" size={28} color="green" />
+                                <MaterialIcons name="email" size={24} color="green" />
                             </View>
                             <TextInput
                                 autoCapitalize="none"
@@ -67,7 +75,7 @@ export default function Example() {
                         <Text style={styles.inputLabel}>Password</Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={styles.iconContainer}>
-                                <MaterialIcons name="lock-person" size={28} color="green" />
+                                <MaterialIcons name="lock-person" size={24} color="green" />
                             </View>
                             <TextInput
                                 autoCorrect={false}
@@ -79,7 +87,7 @@ export default function Example() {
                                 secureTextEntry={isSecureTextEntry}
                                 value={form.password} />
                             <TouchableOpacity onPress={() => { setIsSecureTextEntry(!isSecureTextEntry) }}>
-                                <Feather name={isSecureTextEntry ? "eye-off" : "eye"} size={24} color="black" />
+                                <Feather name={isSecureTextEntry ? "eye-off" : "eye"} size={20} color="black" />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -117,13 +125,13 @@ export default function Example() {
 
 const styles = StyleSheet.create({
     title: {
-        fontSize: 31,
+        fontSize: 20,
         fontWeight: '700',
         color: '#1D2A32',
         marginBottom: 6,
     },
     subtitle: {
-        fontSize: 15,
+        fontSize: 14,
         fontWeight: '500',
         color: '#929292',
     },
@@ -135,10 +143,9 @@ const styles = StyleSheet.create({
         marginBottom: 50,
     },
     headerImg: {
-        width: 200,
-        height: 200,
+        width: 170,
+        height: 170,
         alignSelf: 'center',
-        marginTop: 30,
     },
     /** Form */
     form: {
@@ -150,16 +157,15 @@ const styles = StyleSheet.create({
     },
     formAction: {
         marginTop: 8,
-        marginBottom: 16,
     },
     formLink: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: '600',
         color: '#075eec',
         textAlign: 'center',
     },
     formFooter: {
-        fontSize: 15,
+        fontSize: 12,
         fontWeight: '600',
         color: '#222',
         textAlign: 'center',
@@ -171,20 +177,21 @@ const styles = StyleSheet.create({
         //marginBottom: 16,
     },
     inputLabel: {
-        fontSize: 17,
+        fontSize: 14,
         fontWeight: '600',
         color: '#222',
         marginBottom: 8,
+        marginHorizontal: 10
     },
     inputControl: {
-        height: 50,
+        height: 40,
         width: "80%",
         //marginLeft: 5,
         //backgroundColor: '#fff',
         paddingHorizontal: 16,
         //borderRadius: 12,
-        fontSize: 15,
-        fontWeight: '500',
+        fontSize: 14,
+        fontWeight: '400',
         color: '#222',
         // borderBottomColor: '#C9D3DB',
         //borderBottomWidth: 1,
@@ -203,18 +210,19 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         elevation: 2,
         backgroundColor: "#141517",
-        height: 60,
+        height: 50,
         marginVertical: 15
     },
     btnText: {
-        fontSize: 18,
+        fontSize: 16,
         lineHeight: 26,
         fontWeight: '600',
         color: '#fff',
     },
     divider: {
         borderColor: "#141517",
-        borderWidth: .5,
+        borderWidth: .4,
         marginBottom: 16,
+        marginHorizontal: 10
     }
 });

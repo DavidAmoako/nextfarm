@@ -5,13 +5,20 @@ import {
     Text,
     View,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    StatusBar
 } from 'react-native'
 import { router, Router } from 'expo-router'
 
 export default function StartScreen() {
     return (
         <View style={styles.mainContainer}>
+            <StatusBar
+                animated={true}
+                backgroundColor="#159e42"
+                showHideTransition={"fade"}
+                hidden={false}
+            />
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require('../assets/images/logo.png')} />
                 <Text style={styles.logoText}><Text style={styles.the}>The</Text>NextFarm</Text>
@@ -41,7 +48,7 @@ const styles = StyleSheet.create({
     },
     copyright: {
         color: "#fff",
-        fontSize: 14,
+        fontSize: 10,
         padding: 20,
         marginTop: 20,
         textAlign: "center"
@@ -50,24 +57,24 @@ const styles = StyleSheet.create({
         elevation: 2,
         backgroundColor: "#fff",
         width: "90%",
-        height: 60,
+        height: 50,
         borderRadius: 10,
         justifyContent: "center",
         alignItems: "center",
         marginVertical: 10
     },
     text: {
-        fontSize: 19,
+        fontSize: 14,
         color: "#159e42",
         fontWeight: "bold"
     },
     registerText: {
-        fontSize: 16,
+        fontSize: 14,
         color: "#000",
         fontWeight: "semibold",
     },
     registerText1: {
-        fontSize: 18,
+        fontSize: 16,
         color: "#fff",
         fontWeight: "semibold",
     },
@@ -76,13 +83,13 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     logoText: {
-        fontSize: 35,
+        fontSize: 30,
         fontWeight: "bold",
         color: "#fff"
     },
     logo: {
-        width: 300,
-        height: 300,
+        width: 250,
+        height: 250,
         resizeMode: "contain"
     },
     the: {

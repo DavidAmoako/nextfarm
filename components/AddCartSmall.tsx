@@ -30,11 +30,11 @@ export default function AddandSubSmall() {
         <View>
             <View style={styles.number}>
                 <Pressable onPress={subtract}>
-                    <Feather name="minus" size={20} color="black" />
+                    <Feather name="minus" size={18} color="black" />
                 </Pressable>
-                <Text style={{ fontSize: 20, fontWeight: '500', marginHorizontal: 15 }}>{number}</Text>
+                <Text style={{ fontSize: 18, fontWeight: '500', marginHorizontal: 15 }}>{number}</Text>
                 <Pressable onPress={add}>
-                    <Feather name="plus" size={20} color="black" />
+                    <Feather name="plus" size={18} color="black" />
                 </Pressable>
             </View>
         </View>
@@ -44,7 +44,7 @@ export default function AddandSubSmall() {
 const styles = StyleSheet.create({
     number: {
         flexDirection: "row",
-        width: 120,
+        width: 100,
         alignItems: "center",
         justifyContent: "space-evenly",
         backgroundColor: "#f2f2f2",

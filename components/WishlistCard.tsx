@@ -29,10 +29,10 @@ export default function WishlistCard({ item }: { item: any }) {
         <View style={{ width: "100%", marginBottom: 10 }}>
             <View style={styles.container}>
                 <Image source={item.image} style={styles.image} />
-                <View style={{ marginLeft: 20, width: "100%" }}>
+                <View style={{ marginLeft: 10, width: "100%" }}>
                     <Text style={styles.title}>{item.name}</Text>
-                    <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 15 }}>
-                        <Text style={styles.price}>{item.price}   <Text style={styles.discount}>{item.discount}</Text></Text>
+                    <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
+                        <Text style={styles.price}>${item.price}   <Text style={styles.discount}>{item.discount}</Text></Text>
                         <Pressable onPress={() => { setFocused(!focused) }} style={{ marginRight: 10 }}>
                             <FontAwesome name={focused ? 'star' : 'star-o'} size={20} color="orange" />
                         </Pressable>
@@ -43,7 +43,7 @@ export default function WishlistCard({ item }: { item: any }) {
                             <Text style={styles.remove}>Remove</Text>
                         </Pressable>
                         <Pressable style={{ marginLeft: "30%" }} onPress={() => { router.navigate('/cart') }}>
-                            <MaterialCommunityIcons name="plus-circle" size={40} color="#0C775D" />
+                            <MaterialCommunityIcons name="plus-circle" size={30} color="#0C775D" />
                         </Pressable>
                     </View>
                 </View>
@@ -57,37 +57,37 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         backgroundColor: '#fff',
         borderRadius: 20,
-        padding: 10
+        padding: 8
 
     },
     image: {
         width: 110,
         height: 110,
-        borderRadius: 20,
+        borderRadius: 16,
         resizeMode: 'cover'
     },
     title: {
-        fontSize: 20,
+        fontSize: 18,
         lineHeight: 24,
-        fontWeight: "600",
+        fontWeight: "500",
         textAlign: "left",
         marginBottom: 5
     },
     price: {
-        fontSize: 18,
-        fontWeight: '700',
+        fontSize: 16,
+        fontWeight: '600',
         color: "#0C775D",
-        marginRight: 20
+        marginRight: 15
     },
     discount: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: 'medium',
         color: "#000",
         textDecorationLine: 'line-through',
         fontStyle: "italic",
     },
     remove: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: '600',
         color: "#FF0000",
         marginTop: 10,

@@ -30,7 +30,7 @@ export default function CartCard({ item }: { item: any }) {
         <View style={{ width: "100%", marginBottom: 10 }}>
             <View style={styles.container}>
                 <Image source={item.image} style={styles.image} />
-                <View style={{ marginLeft: 20, width: "100%" }}>
+                <View style={{ marginLeft: 15, width: "100%" }}>
                     <Text style={styles.title}>{item.name}</Text>
                     <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 15 }}>
                         <Text style={styles.price}>${item.price}   <Text style={styles.discount}>{item.discount}</Text></Text>
@@ -42,7 +42,7 @@ export default function CartCard({ item }: { item: any }) {
                     <View style={{ flexDirection: "row", alignContent: "center" }}>
                         <AddandSubSmall />
                         <Pressable style={{ marginLeft: "15%" }} onPress={DeleteAlert}>
-                            <MaterialCommunityIcons name="delete-circle-outline" size={40} color="#FF3131" />
+                            <MaterialCommunityIcons name="delete-circle-outline" size={30} color="#FF3131" />
                         </Pressable>
                     </View>
                 </View>
@@ -60,36 +60,29 @@ const styles = StyleSheet.create({
 
     },
     image: {
-        width: 110,
-        height: 110,
+        width: 100,
+        height: 100,
         borderRadius: 20,
         resizeMode: 'cover'
     },
     title: {
-        fontSize: 20,
-        lineHeight: 24,
-        fontWeight: "600",
+        fontSize: 18,
+        lineHeight: 20,
+        fontWeight: "500",
         textAlign: "left",
         marginBottom: 5
     },
     price: {
-        fontSize: 18,
-        fontWeight: '700',
+        fontSize: 16,
+        fontWeight: '500',
         color: "#0C775D",
         marginRight: 20
     },
     discount: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: 'medium',
         color: "#000",
         textDecorationLine: 'line-through',
         fontStyle: "italic",
     },
-    remove: {
-        fontSize: 16,
-        fontWeight: '600',
-        color: "#FF0000",
-        marginTop: 10,
-        textTransform: 'uppercase'
-    }
 })

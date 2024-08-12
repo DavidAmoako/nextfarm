@@ -21,9 +21,13 @@ export default function Wishlist() {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <HeaderExtraSearch header='Wishlist' />
-            <View style={{ marginHorizontal: 10 }}>
-                <CategoryScroll />
+            <View style={{ flex: 1, marginHorizontal: 10 }}>
                 <FlatList
+                    ListHeaderComponent={
+                        <>
+                            <CategoryScroll />
+                        </>
+                    }
                     data={wishlist}
                     renderItem={({ item }) => (<WishlistCard item={item} />)}
                     contentContainerStyle={{

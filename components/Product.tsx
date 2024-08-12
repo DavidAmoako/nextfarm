@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         elevation: 2,
         backgroundColor: '#fff',
         width: '90%',
-        height: 210,
+        height: 200,
         borderRadius: 15,
         margin: 10,
         padding: 10,
@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
         borderRadius: 15
     },
     text: {
-        fontSize: 18,
-        fontWeight: '500',
+        fontSize: 16,
+        fontWeight: '400',
         marginTop: 30,
-        marginBottom: 10
+        marginBottom: 15
 
     },
     imageContainer: {

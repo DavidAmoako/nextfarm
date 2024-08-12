@@ -3,7 +3,6 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
 } from 'react-native'
 import React, { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons'
@@ -27,10 +26,10 @@ export default function ProductCard1({ item, handleLiked }: { item: any, handleL
         }}>
             <Image source={{ uri: item.image }} style={styles.coverImage} />
             <Text style={styles.name}>{item.title}</Text>
-            <Text style={styles.name}>Product Description</Text>
+            <Text style={[styles.name, { fontSize: 12, fontWeight: 400 }]}>Product Description</Text>
             <Text style={styles.price}>${item.price}{'    '}<Text style={styles.discount}>${item.discount}</Text></Text>
             <TouchableOpacity activeOpacity={0.5} style={styles.likeContainer} onPress={() => { handleLiked(item) }}>
-                <Ionicons name={item?.isLiked ? 'heart' : 'heart-outline'} size={22} color={'red'} />
+                <Ionicons name={item?.isLiked ? 'heart' : 'heart-outline'} size={20} color={'red'} />
             </TouchableOpacity>
         </TouchableOpacity>
     )
@@ -42,42 +41,42 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         flex: 1,
         width: "100%",
-        height: 251,
+        height: 240,
         paddingHorizontal: 11,
         paddingTop: 8,
         paddingBottom: 15,
-        marginHorizontal: 9,
+        marginHorizontal: 6,
         marginBottom: 15
     },
     coverImage: {
-        borderRadius: 13,
+        borderRadius: 12,
         flex: 1,
         width: "100%",
         height: 173,
         marginBottom: 5
     },
     name: {
-        fontSize: 15,
+        fontSize: 14,
         fontWeight: "700",
         textAlign: "center"
     },
     price: {
-        fontSize: 16,
+        fontSize: 14,
         fontStyle: "italic",
         fontWeight: "700",
         color: "#0c775d",
         textAlign: "center",
     },
     discount: {
-        fontSize: 15,
+        fontSize: 12,
         textDecorationLine: "line-through",
         fontStyle: "italic",
         textAlign: "center",
         color: "#000",
     },
     likeContainer: {
-        height: 30,
-        width: 30,
+        height: 25,
+        width: 25,
         backgroundColor: "#fff",
         borderRadius: 30,
         alignItems: "center",

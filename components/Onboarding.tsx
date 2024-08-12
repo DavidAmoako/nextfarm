@@ -1,12 +1,9 @@
-import { ThemedText } from './ThemedText'
 import { useState, useRef } from 'react'
 import {
     StyleSheet,
-    Text,
     View,
     FlatList,
     Animated,
-    Pressable
 } from 'react-native'
 import React from 'react'
 import slides from '../Data/slides'
@@ -44,14 +41,6 @@ export default function Onboarding() {
                 />
             </View>
             <Paginator data={slides} scrollX={scrollX} />
-            {/*             <Pressable style={styles.button} onPress={() => { }}>
-                <Text style={styles.text}>Get Started</Text>
-            </Pressable>
-            <View>
-                <ThemedText type='default' style={styles.loginText}>
-                    Already registered?     <ThemedText type='link' style={styles.loginText1} onPress={() => { }}>Login</ThemedText>
-                </ThemedText>
-            </View> */}
         </View>
     )
 }
@@ -61,30 +50,5 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    button: {
-        elevation: 2,
-        backgroundColor: "#141517",
-        //width: 300,
-        height: 60,
-        borderRadius: 10,
-        justifyContent: "center",
-        alignItems: "center",
-        marginVertical: 15
-    },
-    text: {
-        fontSize: 19,
-        color: "#fff",
-        fontWeight: "bold"
-    },
-    loginText: {
-        fontSize: 18,
-        color: "#000",
-        fontWeight: "semibold",
-        marginBottom: 30
-    },
-    loginText1: {
-        fontSize: 18,
-        fontWeight: "semibold",
     },
 })

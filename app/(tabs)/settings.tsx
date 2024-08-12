@@ -19,13 +19,11 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function ShopProfileScreen() {
 
-    StatusBar.setHidden(true);
-
     return (
-        <View>
+        <ScrollView>
             <Image style={styles.image} source={require('@/assets/images/profile-screen.jpg')} />
             <TouchableOpacity activeOpacity={.5} style={styles.back} onPress={() => { router.replace('/(tabs)') }}>
-                <FontAwesome6 name="arrow-left-long" size={26} color="white" />
+                <FontAwesome6 name="arrow-left-long" size={25} color="white" />
             </TouchableOpacity>
             <View style={styles.container}>
                 <TouchableOpacity activeOpacity={.9} style={styles.profileContainer}>
@@ -66,7 +64,7 @@ export default function ShopProfileScreen() {
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: '100%',
-        height: 160,
+        height: 180,
         resizeMode: 'cover',
         position: "absolute"
     },
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
         width: 50,
     },
     name: {
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: "500",
     },
     lastseen: {
@@ -101,7 +99,7 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     profileContainer: {
-        marginBottom: 20,
+        marginBottom: 10,
         overflow: "hidden",
         justifyContent: "center",
         alignItems: "center"
@@ -110,28 +108,28 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         borderRadius: 50,
-        borderColor: "#000",
+        borderColor: "#fff",
         borderWidth: 2,
     },
     actions: {
         flex: 1,
-        marginTop: 30,
+        marginTop: 25,
         paddingHorizontal: 20,
     },
     actionButton: {
         flexDirection: "row",
         borderColor: "grey",
         borderTopWidth: 1,
-        height: 55,
+        height: 50,
         width: "100%",
-        padding: 15,
+        padding: 10,
         borderRadius: 10,
         justifyContent: "flex-start",
         alignItems: "center"
     },
     actionText: {
-        fontSize: 16,
-        fontWeight: "800",
+        fontSize: 14,
+        fontWeight: "500",
         textAlign: "left"
     }
 })

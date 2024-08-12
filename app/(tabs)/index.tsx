@@ -29,7 +29,6 @@ const categories = ['Crazy Deals', 'Budget Buys', 'Best Offer', 'Flash Sales'];
 
 export default function ShopHomeScreen() {
 
-  const [category, setCategory] = useState(null);
   const [products, setProducts] = useState(data.products);
 
   const handleLiked = (item: { id: number }) => {
@@ -47,6 +46,13 @@ export default function ShopHomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar
+        animated={true}
+        backgroundColor="#fff"
+        barStyle={"dark-content"}
+        showHideTransition={"fade"}
+        hidden={false}
+      />
 
       {/**Components */}
       <Gradient />
@@ -80,7 +86,7 @@ export default function ShopHomeScreen() {
                 </TouchableOpacity>
               </View>
               <View style={styles.imageView}>
-                <Image source={require('@/assets/images/payment.jpg')} style={styles.product} />
+                <Image source={require('@/assets/images/tomato1.jpg')} style={styles.product} />
               </View>
             </View>
 
@@ -100,7 +106,7 @@ export default function ShopHomeScreen() {
               {/**Products Category */}
               <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                 <Text style={styles.categoryText}>Most Popular Products</Text>
-                <TouchableOpacity onPress={() => { router.replace('/shop') }}><Feather name="arrow-right-circle" size={24} color="black" /></TouchableOpacity>
+                <TouchableOpacity onPress={() => { router.replace('/shop') }}><Feather name="arrow-right-circle" size={22} color="black" /></TouchableOpacity>
               </View>
               <CategoryScroll />
             </View>
@@ -125,7 +131,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     backgroundColor: '#fff',
-    height: 48,
+    height: 45,
     borderRadius: 15,
     margin: 20,
     flexDirection: "row",
@@ -139,24 +145,23 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   headText: {
-    fontSize: 15,
     fontWeight: 'normal',
-    marginBottom: 10,
+    marginBottom: 6,
     color: "#0C775D",
   },
   nameText: {
-    fontSize: 24,
-    fontWeight: '800',
+    fontSize: 18,
+    fontWeight: '700',
     marginBottom: 10,
   },
   priceText: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
     color: "#0C775D",
   },
   priceDiscountText: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'medium',
     color: "#000",
     textDecorationLine: 'line-through',
@@ -164,29 +169,31 @@ const styles = StyleSheet.create({
   },
   addButton: {
     backgroundColor: "#0C775D",
-    padding: 5,
+    paddingVertical: 5,
+    paddingHorizontal: 25,
     borderRadius: 15,
     justifyContent: 'center',
     alignItems: "center",
     marginRight: 40
   },
   addText: {
-    fontSize: 24,
+    fontSize: 16,
     fontWeight: 'bold',
     color: "#fff",
     margin: 5,
   },
   product: {
     width: "100%",
-    height: 200,
+    height: 175,
     borderRadius: 20,
-    resizeMode: 'cover',
+    //resizeMode: 'cover',
   },
   imageView: {
     borderRadius: 20,
     flex: 1,
     margin: 5,
     marginLeft: 20,
+    resizeMode: "cover"
   },
   productContainer: {
     marginBottom: 10,
@@ -195,11 +202,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   categoryText: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   categoryContainer: {
-    marginHorizontal: 20,
+    marginHorizontal: 15,
   }
 })

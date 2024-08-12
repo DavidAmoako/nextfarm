@@ -41,6 +41,6 @@ const styles = StyleSheet.create({
   product: {
     marginHorizontal: 10,
     marginTop: 10,
-    marginBottom: 30
+    marginBottom: 20
   }
 })

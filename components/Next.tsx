@@ -6,7 +6,7 @@ export default function Next() {
     return (
         <View style={styles.container}>
             <TouchableOpacity activeOpacity={.5} style={styles.btn} onPress={() => { router.push('/checkout') }}>
-                <Text style={styles.text}>Next</Text>
+                <Text style={styles.text}>Checkout</Text>
             </TouchableOpacity>
         </View>
     )
@@ -19,14 +19,14 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingHorizontal: 20,
         paddingTop: 13,
-        paddingBottom: 24,
+        paddingBottom: 16,
     },
     btn: {
-        borderRadius: 39,
+        borderRadius: 40,
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
-        paddingVertical: 17,
+        paddingVertical: 15,
         backgroundColor: "#0C775D",
     },
     text: {

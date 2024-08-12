@@ -2,142 +2,142 @@
     "products": [
         {
             "id": 1,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567613/cwlk21f74nd9iamrlzkh.png",
-            "title": "Jacket",
-            "price": 49.99,
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502300/IMG-20240803-WA0035_iphqzg.jpg",
+            "title": "Cucumber",
+            "price": 32.99,
             "discount": 49.99
         },
         {
             "id": 2,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/qichw3wrcioebkvzudib.png",
-            "title": "Jeans",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502300/IMG-20240803-WA0036_ly9xmj.jpg",
+            "title": "Onion Basket",
             "price": 39.99,
-            "discount": 39.99
+            "discount": 44.99
         },
         {
             "id": 3,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/vy2q98s8ucsywwxjx2cf.png",
-            "title": "Acrylic Sweater",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502300/IMG-20240803-WA0034_medoda.jpg",
+            "title": "Sweet Pepper",
             "price": 29.99,
-            "discount": 29.99
+            "discount": 39.99
         },
         {
             "id": 4,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/smf81ubnfjennk9qbjm4.png",
-            "title": "Winter Coat",
-            "price": 99.99,
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502300/IMG-20240803-WA0033_bxml9h.jpg",
+            "title": "Carrots",
+            "price": 83.99,
             "discount": 99.99
         },
         {
             "id": 5,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/cvafl35dv9wzisdsgtd6.png",
-            "title": "Winter Shirts",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502300/IMG-20240803-WA0026_ndspd8.jpg",
+            "title": "Pepper Green",
             "price": 59.99,
-            "discount": 59.99
+            "discount": 64.99
         },
         {
             "id": 6,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567613/cwlk21f74nd9iamrlzkh.png",
-            "title": "Shirts With Jacket",
-            "price": 149.99,
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502300/IMG-20240803-WA0031_iignh7.jpg",
+            "title": "Onions Big",
+            "price": 141.99,
             "discount": 149.99
         },
         {
             "id": 7,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567613/cwlk21f74nd9iamrlzkh.png",
-            "title": "Leather Jacket",
-            "price": 79.99,
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502299/IMG-20240803-WA0029_xvh7a6.jpg",
+            "title": "Pepper Red",
+            "price": 67.99,
             "discount": 79.99
         },
         {
             "id": 8,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/qichw3wrcioebkvzudib.png",
-            "title": "Blue Jeans",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502299/IMG-20240803-WA0030_bxs3bh.jpg",
+            "title": "Carrot Basket",
             "price": 49.99,
-            "discount": 49.99
+            "discount": 54.99
         },
         {
             "id": 9,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/vy2q98s8ucsywwxjx2cf.png",
-            "title": "Wool Sweater",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502299/IMG-20240803-WA0027_jlhlop.jpg",
+            "title": "Tomato Basket",
             "price": 39.99,
-            "discount": 39.99
+            "discount": 48.99
         },
         {
             "id": 10,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/smf81ubnfjennk9qbjm4.png",
-            "title": "Parka",
-            "price": 129.99,
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502299/IMG-20240803-WA0024_y077rc.jpg",
+            "title": "Small Tomatoes",
+            "price": 121.99,
             "discount": 129.99
         },
         {
             "id": 11,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/cvafl35dv9wzisdsgtd6.png",
-            "title": "Sweatshirt",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502299/IMG-20240803-WA0028_mhnt0a.jpg",
+            "title": "Chilli Pepper",
             "price": 19.99,
-            "discount": 19.99
+            "discount": 28.99
         },
         {
             "id": 12,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567613/cwlk21f74nd9iamrlzkh.png",
-            "title": "Denim Jacket",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502298/IMG-20240803-WA0039_sjjrlq.jpg",
+            "title": "Pepper",
             "price": 69.99,
-            "discount": 69.99
+            "discount": 74.99
         },
         {
             "id": 13,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567613/cwlk21f74nd9iamrlzkh.png",
-            "title": "Hoodie",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502298/IMG-20240803-WA0038_fkconk.jpg",
+            "title": "Tomatoes",
             "price": 29.99,
-            "discount": 29.99
+            "discount": 39.99
         },
         {
             "id": 14,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/qichw3wrcioebkvzudib.png",
-            "title": "Black Jeans",
-            "price": 59.99,
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502298/IMG-20240803-WA0041_bf95oi.jpg",
+            "title": "Bell Pepper",
+            "price": 46.99,
             "discount": 59.99
         },
         {
             "id": 15,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/vy2q98s8ucsywwxjx2cf.png",
-            "title": "Cable-Knit Sweater",
-            "price": 49.99,
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502298/IMG-20240803-WA0046_g3nvpg.jpg",
+            "title": "Onions",
+            "price": 37.99,
             "discount": 49.99
         },
         {
             "id": 16,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/smf81ubnfjennk9qbjm4.png",
-            "title": "Peacoat",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502298/IMG-20240803-WA0043_mwguvi.jpg",
+            "title": "Cucumber Basket",
             "price": 89.99,
-            "discount": 89.99
+            "discount": 93.99
         },
         {
             "id": 17,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/cvafl35dv9wzisdsgtd6.png",
-            "title": "Flannel Shirt",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502298/IMG-20240803-WA0044_jyk2th.jpg",
+            "title": "Tomato Basket",
             "price": 34.99,
-            "discount": 34.99
+            "discount": 48.99
         },
         {
             "id": 18,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567613/cwlk21f74nd9iamrlzkh.png",
-            "title": "Windbreaker",
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502297/IMG-20240803-WA0037_gipeli.jpg",
+            "title": "Green Pepper",
             "price": 59.99,
-            "discount": 59.99
+            "discount": 64.99
         },
         {
             "id": 19,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567613/cwlk21f74nd9iamrlzkh.png",
-            "title": "Puffer Jacket",
-            "price": 119.99,
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723502297/IMG-20240803-WA0042_koli3y.jpg",
+            "title": "Tomato Small",
+            "price": 100.99,
             "discount": 119.99
         },
         {
             "id": 20,
-            "image": "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/qichw3wrcioebkvzudib.png",
-            "title": "Ripped Jeans",
-            "price": 69.99,
+            "image": "https://res.cloudinary.com/dy5w6ccii/image/upload/v1723501938/IMG-20240803-WA0023_z7dh23.jpg",
+            "title": "Fresh Pepper",
+            "price": 57.99,
             "discount": 69.99
         }
     ]

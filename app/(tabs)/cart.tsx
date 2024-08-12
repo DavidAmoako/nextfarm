@@ -16,7 +16,6 @@ import wishlist from '@/Data/wishlist';
 
 export default function ShopCartScreen() {
 
-    StatusBar.setBackgroundColor('#fff');
     let total = 0;
 
     for (var item of wishlist) {
@@ -25,6 +24,7 @@ export default function ShopCartScreen() {
 
     return (
         <SafeAreaView style={{ flex: 1, }}>
+
             <HeaderExtraSearch header='My Cart' />
             <View style={{ flex: 1, marginHorizontal: 10, marginTop: 10 }}>
                 <FlatList
@@ -54,19 +54,19 @@ const styles = StyleSheet.create({
         //justifyContent: "flex-end"
     },
     buttonView: {
-        paddingVertical: 10,
+        paddingVertical: 5,
         paddingHorizontal: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: "center",
     },
     buttonText: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: '400',
     },
     buttonPrice: {
-        fontSize: 20,
-        fontWeight: '800',
+        fontSize: 18,
+        fontWeight: '700',
         color: "#0C775D"
     },
 

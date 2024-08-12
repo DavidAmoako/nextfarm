@@ -36,7 +36,7 @@ export default function ProductItems() {
     return (
         <SafeAreaView style={{ flex: 1, justifyContent: "flex-end" }}>
             <HeaderExtraCart header='Product Details' />
-            <ScrollView style={{ flex: 1, paddingTop: 20, paddingHorizontal: 10, marginBottom: 10 }} showsVerticalScrollIndicator={false}>
+            <ScrollView style={{ flex: 1, paddingTop: 15, paddingHorizontal: 10, marginBottom: 10 }} showsVerticalScrollIndicator={false}>
                 <View style={styles.imageContainer}>
                     <Image source={{ uri: image }} style={styles.image} />
                 </View>
@@ -57,7 +57,7 @@ export default function ProductItems() {
 
                     </View>
                     <View>
-                        <Text style={styles.status}><Text style={styles.lv}>lv:{'   '}</Text>Low:</Text>
+                        <Text style={styles.status}><Text style={styles.lv}>lv:{'   '}</Text>Low</Text>
                         <Text style={styles.itemSize}>Item Size</Text>
                         <View style={styles.sizeContainer}>
                             {
@@ -103,56 +103,54 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginLeft: 20,
         backgroundColor: "#0C775D",
-        height: 60,
-        borderRadius: 42,
+        height: 50,
+        borderRadius: 45,
 
     },
     text: {
         fontSize: 16,
-        fontWeight: '600',
+        fontWeight: '500',
         color: "#fff",
         textAlign: 'center'
     },
     productName: {
-        fontSize: 24,
+        fontSize: 20,
         lineHeight: 24,
-        fontWeight: "700",
-        textAlign: "left"
+        fontWeight: "600",
+        textAlign: "left",
+        marginLeft: 5
     },
     rating1: {
         fontSize: 16,
-        lineHeight: 24,
-        fontWeight: "600",
+        fontWeight: "500",
         textAlign: "left",
         marginRight: 10
     },
     rating2: {
         fontSize: 16,
-        lineHeight: 24,
         fontWeight: "500",
         color: "#bebdbd",
         textAlign: "left"
     },
     priceText: {
         fontSize: 16,
-        lineHeight: 24,
-        fontWeight: "600",
+        fontWeight: "500",
         textAlign: "left"
     },
     price: {
-        fontSize: 18,
-        fontWeight: '700',
+        fontSize: 16,
+        fontWeight: '600',
         color: "#0C775D",
     },
     discount: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: 'medium',
         color: "#000",
         textDecorationLine: 'line-through',
         fontStyle: "italic",
     },
     status: {
-        fontSize: 18,
+        fontSize: 16,
         lineHeight: 24,
         fontWeight: "600",
         color: "#159e42",
@@ -161,19 +159,19 @@ const styles = StyleSheet.create({
     lv: {
         fontSize: 16,
         lineHeight: 24,
-        fontWeight: "600",
+        fontWeight: "400",
         color: "#000",
         textAlign: "left"
     },
     itemSize: {
-        fontSize: 16,
+        fontSize: 15,
         lineHeight: 24,
-        fontWeight: "600",
+        fontWeight: "500",
         textAlign: "left",
         marginTop: 10
     },
     imageContainer: {
-        height: 400,
+        height: 350,
         width: "100%",
         marginBottom: 30,
     },
@@ -196,9 +194,9 @@ const styles = StyleSheet.create({
     },
     sizeValueContainer: {
         backgroundColor: "#fff",
-        width: 50,
-        height: 50,
-        borderRadius: 15,
+        width: 42,
+        height: 42,
+        borderRadius: 10,
         justifyContent: "center",
         alignItems: "center",
         marginHorizontal: 5
@@ -209,7 +207,6 @@ const styles = StyleSheet.create({
         fontWeight: "500",
     },
     description1: {
-        fontSize: 14,
         lineHeight: 20,
         textAlign: "left"
     }

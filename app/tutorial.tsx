@@ -3,7 +3,8 @@ import {
     StyleSheet,
     Text,
     View,
-    TouchableOpacity
+    TouchableOpacity,
+    StatusBar
 } from 'react-native'
 import React from 'react'
 import Onboarding from '@/components/Onboarding'
@@ -12,6 +13,12 @@ import { router, Router } from 'expo-router'
 export default function TutorialPage() {
     return (
         <View style={styles.container}>
+            <StatusBar
+                animated={true}
+                backgroundColor="#fff"
+                showHideTransition={"fade"}
+                hidden={false}
+            />
             <Onboarding />
             <TouchableOpacity style={styles.button} onPress={() => { router.replace('/signIn') }}>
                 <Text style={styles.text}>Get Started</Text>
@@ -36,25 +43,26 @@ const styles = StyleSheet.create({
         elevation: 2,
         backgroundColor: "#141517",
         width: "90%",
-        height: 60,
+        height: 50,
         borderRadius: 10,
         justifyContent: "center",
         alignItems: "center",
-        marginVertical: 15
+        marginVertical: 15,
+        marginBottom: 50
     },
     text: {
-        fontSize: 19,
+        fontSize: 16,
         color: "#fff",
         fontWeight: "bold"
     },
     loginText: {
-        fontSize: 18,
+        fontSize: 14,
         color: "#000",
         fontWeight: "semibold",
         marginBottom: 30
     },
     loginText1: {
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: "semibold",
     },
 })

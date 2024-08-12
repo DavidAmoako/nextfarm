@@ -7,7 +7,6 @@ import {
 } from 'react-native'
 import React from 'react'
 import { useState } from 'react';
-import { router, Router } from 'expo-router'
 import Feather from '@expo/vector-icons/Feather';
 
 export default function AddandSub() {
@@ -30,11 +29,11 @@ export default function AddandSub() {
         <View>
             <View style={styles.number}>
                 <Pressable onPress={subtract}>
-                    <Feather name="minus" size={24} color="black" />
+                    <Feather name="minus" size={22} color="black" />
                 </Pressable>
-                <Text style={{ fontSize: 22, fontWeight: '500', marginHorizontal: 15 }}>{number}</Text>
+                <Text style={{ fontSize: 20, fontWeight: '500', marginHorizontal: 15 }}>{number}</Text>
                 <Pressable onPress={add}>
-                    <Feather name="plus" size={24} color="black" />
+                    <Feather name="plus" size={22} color="black" />
                 </Pressable>
             </View>
         </View>

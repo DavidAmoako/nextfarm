@@ -32,26 +32,26 @@ export default function Checkout() {
             <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20, flex: 1 }}>
                 <TouchableOpacity activeOpacity={.5} style={styles.container}>
                     <View style={styles.icon}>
-                        <Ionicons name="location-outline" size={24} color="#0C775D" />
+                        <Ionicons name="location-outline" size={22} color="#0C775D" />
                     </View>
                     <View style={styles.optionsContainer}>
                         <Text style={styles.title}>Delivery address</Text>
                         <Text style={styles.subtitle}>123 Main Street, Anytown, Ghana</Text>
                     </View>
                     <View style={styles.icon1}>
-                        <MaterialIcons name="arrow-forward-ios" size={24} color="black" />
+                        <MaterialIcons name="arrow-forward-ios" size={22} color="black" />
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={.5} style={styles.container}>
                     <View style={styles.icon}>
-                        <Octicons name="credit-card" size={24} color="#0C775D" />
+                        <Octicons name="credit-card" size={22} color="#0C775D" />
                     </View>
                     <View style={styles.optionsContainer}>
                         <Text style={styles.title}>Payment</Text>
                         <Text style={styles.subtitle}>XXXX XXXX XXXX 3456</Text>
                     </View>
                     <View style={styles.icon1}>
-                        <MaterialIcons name="arrow-forward-ios" size={24} color="black" />
+                        <MaterialIcons name="arrow-forward-ios" size={22} color="black" />
                     </View>
                 </TouchableOpacity>
                 <View>
@@ -136,18 +136,16 @@ export default function Checkout() {
 
 const styles = StyleSheet.create({
     title: {
-        fontSize: 17,
+        fontSize: 16,
         fontWeight: 'bold',
         marginBottom: 3,
     },
     subtitle: {
         fontSize: 14,
-        fontWeight: "500"
     },
     subtitle1: {
         marginTop: 20,
-        fontSize: 16,
-        fontWeight: "500"
+        fontSize: 15,
     },
     icon: {
         width: 45,
@@ -158,14 +156,14 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     icon1: {
-        width: 45,
-        height: 45,
+        width: 40,
+        height: 40,
         justifyContent: "center",
         alignItems: "center",
     },
     optionsContainer: {
         flex: 1,
-        height: 45,
+        height: 40,
         marginHorizontal: 15,
     },
     container: {
@@ -185,8 +183,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
     price: {
-        fontSize: 22,
-        fontWeight: '900'
+        fontSize: 18,
+        fontWeight: '500'
     },
     priceContainer: {
         flexDirection: "row",
@@ -209,11 +207,11 @@ const styles = StyleSheet.create({
         paddingBottom: 24,
     },
     btn: {
-        borderRadius: 39,
+        borderRadius: 40,
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
-        paddingVertical: 17,
+        paddingVertical: 15,
         backgroundColor: "#0C775D",
     },
     text: {
@@ -238,7 +236,7 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: '#0C775D',
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
         textDecorationLine: 'underline',
@@ -247,13 +245,13 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         textAlign: 'center',
         fontSize: 20,
-        fontWeight: '700',
+        fontWeight: '600',
     },
     modalSubText: {
         marginBottom: 30,
         textAlign: 'center',
         fontSize: 14,
-        fontWeight: '500',
+        fontWeight: '400',
     },
     inner: {
         alignItems: 'center',

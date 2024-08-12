@@ -22,14 +22,14 @@ export default function Category({ item, setCategory, selectedCategory }: { item
 
 const styles = StyleSheet.create({
     categoryText: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: "600",
         textAlign: "center",
         color: "#000",
         //backgroundColor: "#908f89",
         backgroundColor: "#fff",
         paddingHorizontal: 15,
-        paddingVertical: 12,
+        paddingVertical: 10,
         borderRadius: 10,
         marginHorizontal: 6,
 
