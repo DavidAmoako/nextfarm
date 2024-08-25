@@ -6,7 +6,6 @@ import {
     TextInput,
     ScrollView,
     StatusBar,
-    Modal,
     Pressable
 } from 'react-native'
 import { useState } from 'react';
@@ -100,36 +99,6 @@ export default function DeliveryAddress() {
                     <Text style={styles.text}>Submit Order</Text>
                 </TouchableOpacity>
             </View>
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    setModalVisible(!modalVisible);
-                }}>
-                <View style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: "#fff"
-                }}>
-                    <View style={styles.modalView}>
-                        <View style={styles.outer}>
-                            <View style={styles.inner}>
-                                <Ionicons name="checkmark-sharp" size={40} color="#fff" />
-                            </View>
-                        </View>
-                        <Text style={styles.modalText}>Congratulations!</Text>
-                        <Text style={styles.modalSubText}>
-                            Your Order Successfully Delivered!
-                        </Text>
-
-                        <Pressable onPress={() => setModalVisible(!modalVisible)}>
-                            <Text style={styles.textStyle}>Done!</Text>
-                        </Pressable>
-                    </View>
-                </View>
-            </Modal>
         </SafeAreaView >
     )
 }
