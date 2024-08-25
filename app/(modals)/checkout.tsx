@@ -6,8 +6,6 @@ import {
     TextInput,
     ScrollView,
     StatusBar,
-    Modal,
-    Pressable
 } from 'react-native'
 import { useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
@@ -21,7 +19,6 @@ import { router } from 'expo-router';
 
 export default function Checkout() {
 
-    const [modalVisible, setModalVisible] = useState(false);
 
     const [value, onChangeText] = useState('');
     StatusBar.setBackgroundColor('#fff');
@@ -42,7 +39,7 @@ export default function Checkout() {
                         <MaterialIcons name="arrow-forward-ios" size={22} color="black" />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { router.navigate('/payment') }}>
+                <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { router.navigate('/payment1') }}>
                     <View style={styles.icon}>
                         <Octicons name="credit-card" size={22} color="#0C775D" />
                     </View>
@@ -100,36 +97,6 @@ export default function Checkout() {
                     <Text style={styles.text}>Submit Order</Text>
                 </TouchableOpacity>
             </View>
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    setModalVisible(!modalVisible);
-                }}>
-                <View style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: "#fff"
-                }}>
-                    <View style={styles.modalView}>
-                        <View style={styles.outer}>
-                            <View style={styles.inner}>
-                                <Ionicons name="checkmark-sharp" size={40} color="#fff" />
-                            </View>
-                        </View>
-                        <Text style={styles.modalText}>Congratulations!</Text>
-                        <Text style={styles.modalSubText}>
-                            Your Order Successfully Delivered!
-                        </Text>
-
-                        <Pressable onPress={() => setModalVisible(!modalVisible)}>
-                            <Text style={styles.textStyle}>Done!</Text>
-                        </Pressable>
-                    </View>
-                </View>
-            </Modal>
         </SafeAreaView >
     )
 }
@@ -219,55 +186,11 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         color: "#fff",
     },
-    modalView: {
-        backgroundColor: 'white',
-        borderRadius: 20,
-        padding: 25,
-        width: '80%',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
-    },
     textStyle: {
         color: '#0C775D',
         fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
         textDecorationLine: 'underline',
-    },
-    modalText: {
-        marginBottom: 15,
-        textAlign: 'center',
-        fontSize: 20,
-        fontWeight: '600',
-    },
-    modalSubText: {
-        marginBottom: 30,
-        textAlign: 'center',
-        fontSize: 14,
-        fontWeight: '400',
-    },
-    inner: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 85,
-        height: 85,
-        backgroundColor: '#159E42',
-        borderRadius: 45,
-    },
-    outer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 100,
-        height: 100,
-        backgroundColor: '#0C775D5D',
-        borderRadius: 50,
-        marginBottom: 15,
     },
 });

@@ -14,6 +14,7 @@ export default function Layout() {
             <Stack.Screen name="delivery" options={{}} />
             <Stack.Screen name="address" options={{}} />
             <Stack.Screen name="payment" options={{}} />
+            <Stack.Screen name="payment1" options={{}} />
             <Stack.Screen name="success" options={{
                 presentation: "modal"
             }} />
