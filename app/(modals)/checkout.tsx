@@ -39,7 +39,7 @@ export default function Checkout() {
                         <MaterialIcons name="arrow-forward-ios" size={22} color="black" />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { router.navigate('/payment1') }}>
+                <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { router.navigate('/payment') }}>
                     <View style={styles.icon}>
                         <Octicons name="credit-card" size={22} color="#0C775D" />
                     </View>
