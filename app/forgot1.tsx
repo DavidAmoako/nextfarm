@@ -14,9 +14,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import Feather from '@expo/vector-icons/Feather';
 import { router, Router } from 'expo-router';
 
-export default function SignIn() {
-
-    const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
+export default function Example1() {
 
     const [form, setForm] = useState({
         email: '',
@@ -31,28 +29,32 @@ export default function SignIn() {
                 barStyle={"dark-content"}
                 hidden={false}
             />
-            <KeyboardAwareScrollView>
-                <View style={styles.header}>
-                    <Image
-                        alt="App Logo"
-                        resizeMode="contain"
-                        style={styles.headerImg}
-                        source={
-                            require('../assets/images/adaptive-icon.png')
-                        } />
-
-                    <Text style={styles.title}>
-                        Sign in to <Text style={{ color: '#ff5e03' }}>The</Text><Text style={{ color: '#159e42' }}>NextFarm</Text>
-                    </Text>
-
-                    <Text style={styles.subtitle}>
-                        Get access to fresh products and more
+            <View style={styles.header}>
+                <Image
+                    alt="App Logo"
+                    resizeMode="center"
+                    source={
+                        require('../assets/images/forgot1.jpg')
+                    } />
+            </View>
+            <KeyboardAwareScrollView style={{
+                flex: 1,
+                marginTop: "40%",
+                backgroundColor: "#F2F2F2",
+                borderTopLeftRadius: 30,
+                borderTopRightRadius: 30,
+                paddingTop: 30
+            }}>
+                <View style={{ paddingHorizontal: 24, }}>
+                    <Text style={styles.title}>Forgot Password</Text>
+                    <Text style={[styles.subtitle, { marginBottom: 30 }]}>
+                        Enter the Email Associated with your
+                        Account and we’ll send and email to <Text style={{ fontWeight: "700", color: "#000" }}>reset</Text>
                     </Text>
                 </View>
-
                 <View style={styles.form}>
                     <View style={styles.input}>
-                        <Text style={styles.inputLabel}>Email address</Text>
+                        <Text style={styles.inputLabel}>Email address<Text style={{ color: "red" }}>*</Text></Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={styles.iconContainer}>
                                 <MaterialIcons name="email" size={24} color="green" />
@@ -71,52 +73,30 @@ export default function SignIn() {
                     </View>
                     <View style={styles.divider}></View>
 
-                    <View style={styles.input}>
-                        <Text style={styles.inputLabel}>Password</Text>
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <View style={styles.iconContainer}>
-                                <MaterialIcons name="lock-person" size={24} color="green" />
-                            </View>
-                            <TextInput
-                                autoCorrect={false}
-                                clearButtonMode="while-editing"
-                                onChangeText={password => setForm({ ...form, password })}
-                                placeholder={isSecureTextEntry ? "********" : "password"}
-                                placeholderTextColor="#6b7280"
-                                style={styles.inputControl}
-                                secureTextEntry={isSecureTextEntry}
-                                value={form.password} />
-                            <TouchableOpacity onPress={() => { setIsSecureTextEntry(!isSecureTextEntry) }}>
-                                <Feather name={isSecureTextEntry ? "eye-off" : "eye"} size={20} color="black" />
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={styles.divider}></View>
-
                     <View style={styles.formAction}>
                         <TouchableOpacity
                             activeOpacity={.5}
                             style={styles.btn}
                             onPress={() => {
-                                router.replace('/(tabs)')
+                                router.replace('/forgot2')
                             }}>
-                            <Text style={styles.btnText}>Login</Text>
+                            <Text style={styles.btnText}>Send Mail</Text>
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity onPress={() => router.navigate('/forgot1')}>
-                        <Text style={styles.formLink}>Forgot password?</Text>
+                    <TouchableOpacity style={{ marginTop: 20 }} onPress={() => { router.dismiss(1) }}>
+                        <Text style={[styles.formLink, { textDecorationLine: "underline" }]}>Back</Text>
                     </TouchableOpacity>
                 </View>
             </KeyboardAwareScrollView>
 
             <TouchableOpacity
                 onPress={() => {
-                    // handle link
+                    router.replace('/signIn')
                 }}
                 style={{ marginTop: 'auto' }}>
                 <Text style={styles.formFooter}>
-                    Are you new to this app?{' '}
-                    <Text style={{ textDecorationLine: 'underline', color: '#075eec' }}>Register</Text>
+                    Go Back To?{' '}
+                    <Text style={{ textDecorationLine: 'underline', color: '#075eec' }}>SignIn</Text>
                 </Text>
             </TouchableOpacity>
         </SafeAreaView>
@@ -125,13 +105,13 @@ export default function SignIn() {
 
 const styles = StyleSheet.create({
     title: {
-        fontSize: 20,
+        fontSize: 28,
         fontWeight: '700',
-        color: '#1D2A32',
+        color: '#1E202C',
         marginBottom: 6,
     },
     subtitle: {
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: '500',
         color: '#929292',
     },
@@ -139,24 +119,23 @@ const styles = StyleSheet.create({
     header: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginVertical: 36,
-        marginBottom: 50,
-    },
-    headerImg: {
-        width: 170,
-        height: 170,
-        alignSelf: 'center',
+        width: "100%",
+        height: "35%",
+        position: "absolute"
     },
     /** Form */
     form: {
         marginBottom: 24,
         paddingHorizontal: 24,
-        flexGrow: 1,
-        flexShrink: 1,
-        flexBasis: 0,
+        flex: 1,
+        //padding: 16,
+        //flexDirection: 'row',
+        //flexGrow: 1,
+        //flexShrink: 1,
+        //flexBasis: 0,
     },
     formAction: {
-        marginTop: 8,
+        marginTop: 50,
     },
     formLink: {
         fontSize: 14,

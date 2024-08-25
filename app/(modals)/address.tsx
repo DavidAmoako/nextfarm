@@ -102,7 +102,7 @@ export default function AddDeliveryAddress() {
                 </KeyboardAwareScrollView>
             </ScrollView>
             <View style={styles.btnContainer}>
-                <TouchableOpacity activeOpacity={.5} style={styles.btn} onPress={() => { router.replace('/delivery') }}>
+                <TouchableOpacity activeOpacity={.5} style={styles.btn} onPress={() => { router.dismiss(1) }}>
                     <Text style={styles.text}>Save Address</Text>
                 </TouchableOpacity>
             </View>

@@ -42,7 +42,7 @@ export default function ShopProfileScreen() {
                         <Ionicons name="wallet-outline" size={24} color="black" style={{ marginHorizontal: 10 }} />
                         <Text style={styles.actionText}>Saved Cards & Wallet</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={.3} style={styles.actionButton}>
+                    <TouchableOpacity activeOpacity={.3} style={styles.actionButton} onPress={() => { router.navigate('/address') }}>
                         <Ionicons name="location-outline" size={24} color="black" style={{ marginHorizontal: 10 }} />
                         <Text style={styles.actionText}>Saved Addresses</Text>
                     </TouchableOpacity>

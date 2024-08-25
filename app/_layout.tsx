@@ -33,6 +33,9 @@ export default function RootLayout() {
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="tutorial" options={{ headerShown: false }} />
         <Stack.Screen name="signIn" options={{ headerShown: false }} />
+        <Stack.Screen name="forgot1" options={{ headerShown: false }} />
+        <Stack.Screen name="forgot2" options={{ headerShown: false }} />
+        <Stack.Screen name="forgot3" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="(modals)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
