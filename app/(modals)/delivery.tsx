@@ -3,17 +3,14 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
-    TextInput,
     ScrollView,
     StatusBar,
     Pressable
 } from 'react-native'
-import { useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import Octicons from '@expo/vector-icons/Octicons';
 import HeaderExtra from '@/components/HeaderExtra';
 import { router } from 'expo-router';
 import RadioButton from '@/components/RadioButton';
@@ -23,9 +20,6 @@ import Entypo from '@expo/vector-icons/Entypo';
 
 export default function DeliveryAddress() {
 
-    const [modalVisible, setModalVisible] = useState(false);
-
-    const [value, onChangeText] = useState('');
     StatusBar.setBackgroundColor('#fff');
 
     return (
@@ -69,7 +63,7 @@ export default function DeliveryAddress() {
                     </View>
                 </View>
                 <View style={{ justifyContent: "center", alignItems: "center" }}>
-                    <Pressable style={styles.addButton} onPress={() => { router.push('/(modals)address') }}>
+                    <Pressable style={styles.addButton} onPress={() => { router.push('/address') }}>
                         <View style={{ flexDirection: "row", alignItems: "center" }}>
                             <Ionicons name="add-circle-outline" size={26} color="#0C775D" />
                             <Text style={[styles.subtitle, { marginLeft: 10 }]}>Add Address</Text>
@@ -96,10 +90,6 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: 14,
     },
-    subtitle1: {
-        marginTop: 20,
-        fontSize: 15,
-    },
     icon: {
         width: 45,
         height: 45,
@@ -109,8 +99,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     icon1: {
-        width: 40,
-        height: 40,
+        width: 35,
+        height: 35,
         justifyContent: "center",
         alignItems: "center",
     },
@@ -125,31 +115,6 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         borderBottomWidth: 1,
         borderColor: 'grey',
-    },
-    textInput: {
-        backgroundColor: "#fff",
-        marginTop: 10,
-        borderRadius: 10,
-        paddingHorizontal: 5,
-        height: 130,
-        borderColor: 'grey',
-        borderWidth: 1,
-    },
-    price: {
-        fontSize: 18,
-        fontWeight: '500'
-    },
-    priceContainer: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        paddingVertical: 20,
-        borderColor: 'grey',
-        borderTopWidth: 1,
-    },
-    items: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginBottom: 5
     },
     btnContainer: {
         backgroundColor: "#fff",
@@ -171,57 +136,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
         color: "#fff",
-    },
-    modalView: {
-        backgroundColor: 'white',
-        borderRadius: 20,
-        padding: 25,
-        width: '80%',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
-    },
-    textStyle: {
-        color: '#0C775D',
-        fontSize: 16,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        textDecorationLine: 'underline',
-    },
-    modalText: {
-        marginBottom: 15,
-        textAlign: 'center',
-        fontSize: 20,
-        fontWeight: '600',
-    },
-    modalSubText: {
-        marginBottom: 30,
-        textAlign: 'center',
-        fontSize: 14,
-        fontWeight: '400',
-    },
-    inner: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 85,
-        height: 85,
-        backgroundColor: '#159E42',
-        borderRadius: 45,
-    },
-    outer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 100,
-        height: 100,
-        backgroundColor: '#0C775D5D',
-        borderRadius: 50,
-        marginBottom: 15,
     },
     addButton: {
         backgroundColor: "#fff",

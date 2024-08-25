@@ -19,9 +19,8 @@ export default function Success() {
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
-                    Alert.alert('Successful.');
+                    Vibration.vibrate(1000);
                     setModalVisible(!modalVisible);
-                    Vibration.vibrate();
                 }}>
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>

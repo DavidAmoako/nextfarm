@@ -6,27 +6,20 @@ import {
     TextInput,
     ScrollView,
     StatusBar,
-    Pressable
 } from 'react-native'
 import { useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
-import Ionicons from '@expo/vector-icons/Ionicons';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import Octicons from '@expo/vector-icons/Octicons';
 import HeaderExtra from '@/components/HeaderExtra';
 import { router } from 'expo-router';
-import RadioButton from '@/components/RadioButton';
-import Feather from '@expo/vector-icons/Feather';
-import Entypo from '@expo/vector-icons/Entypo';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
 export default function AddDeliveryAddress() {
 
-    const [modalVisible, setModalVisible] = useState(false);
+    const address = ['Shop', 'Home', 'Office'];
+    const [selectedAddress, setSelectedAddress] = useState<string | null>(null);
 
-    const [value, onChangeText] = useState('');
     StatusBar.setBackgroundColor('#fff');
 
     return (
@@ -34,7 +27,78 @@ export default function AddDeliveryAddress() {
             <HeaderExtra header='Delivery Address' />
             <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20, flex: 1 }}>
                 <KeyboardAwareScrollView>
+                    <View>
+                        <Text style={styles.title}>
+                            Contact Details
+                        </Text>
+                        <Text style={styles.subtitle}>
+                            Full Name
+                        </Text>
+                        <View style={styles.inputContainer}>
+                            <TextInput
+                                style={styles.textInput}
+                            />
+                        </View>
+                        <Text style={styles.subtitle}>
+                            Mobile No.
+                        </Text>
+                        <View style={styles.inputContainer}>
+                            <TextInput
+                                style={styles.textInput}
+                            />
+                        </View>
+                    </View>
+                    <View>
+                        <Text style={styles.title}>
+                            Address
+                        </Text>
+                        <Text style={styles.subtitle}>
+                            Region
+                        </Text>
+                        <View style={styles.inputContainer}>
+                            <TextInput
+                                style={styles.textInput}
+                            />
+                        </View>
+                        <Text style={styles.subtitle}>
+                            City/District
+                        </Text>
+                        <View style={styles.inputContainer}>
+                            <TextInput
+                                style={styles.textInput}
+                            />
+                        </View>
+                        <Text style={styles.subtitle}>
+                            Digital Address
+                        </Text>
+                        <View style={styles.inputContainer}>
+                            <TextInput
+                                style={styles.textInput}
+                            />
+                        </View>
+                        <Text style={styles.subtitle}>
+                            Landmark
+                        </Text>
+                        <View style={styles.inputContainer}>
+                            <TextInput
+                                style={styles.textInput}
+                            />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={styles.sizeContainer}>
+                            {
+                                address.map((address) => {
+                                    return (
+                                        <TouchableOpacity activeOpacity={.5} style={[styles.sizeValueContainer, selectedAddress === address && { backgroundColor: "#0c775d" }]} onPress={() => { setSelectedAddress(address); }}>
+                                            <Text style={[styles.sizeValue, selectedAddress === address && { color: "#fff" }]}>{address}</Text>
+                                        </TouchableOpacity>
+                                    )
+                                })
+                            }
 
+                        </View>
+                    </View>
                 </KeyboardAwareScrollView>
             </ScrollView>
             <View style={styles.btnContainer}>
@@ -47,69 +111,6 @@ export default function AddDeliveryAddress() {
 }
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        marginBottom: 3,
-    },
-    subtitle: {
-        fontSize: 14,
-    },
-    subtitle1: {
-        marginTop: 20,
-        fontSize: 15,
-    },
-    icon: {
-        width: 45,
-        height: 45,
-        backgroundColor: "#fff",
-        borderRadius: 10,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    icon1: {
-        width: 40,
-        height: 40,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    optionsContainer: {
-        flex: 1,
-        height: 40,
-        marginHorizontal: 15,
-    },
-    container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingVertical: 15,
-        borderBottomWidth: 1,
-        borderColor: 'grey',
-    },
-    textInput: {
-        backgroundColor: "#fff",
-        marginTop: 10,
-        borderRadius: 10,
-        paddingHorizontal: 5,
-        height: 130,
-        borderColor: 'grey',
-        borderWidth: 1,
-    },
-    price: {
-        fontSize: 18,
-        fontWeight: '500'
-    },
-    priceContainer: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        paddingVertical: 20,
-        borderColor: 'grey',
-        borderTopWidth: 1,
-    },
-    items: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginBottom: 5
-    },
     btnContainer: {
         backgroundColor: "#fff",
         width: "100%",
@@ -131,69 +132,46 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         color: "#fff",
     },
-    modalView: {
-        backgroundColor: 'white',
-        borderRadius: 20,
-        padding: 25,
-        width: '80%',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
-    },
-    textStyle: {
-        color: '#0C775D',
-        fontSize: 16,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        textDecorationLine: 'underline',
-    },
-    modalText: {
-        marginBottom: 15,
-        textAlign: 'center',
-        fontSize: 20,
-        fontWeight: '600',
-    },
-    modalSubText: {
-        marginBottom: 30,
-        textAlign: 'center',
-        fontSize: 14,
-        fontWeight: '400',
-    },
-    inner: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 85,
-        height: 85,
-        backgroundColor: '#159E42',
-        borderRadius: 45,
-    },
-    outer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 100,
-        height: 100,
-        backgroundColor: '#0C775D5D',
-        borderRadius: 50,
-        marginBottom: 15,
-    },
-    addButton: {
-        backgroundColor: "#fff",
+    sizeContainer: {
         flexDirection: "row",
+        marginTop: 8,
+        marginBottom: 8,
+    },
+    sizeValue: {
+        fontSize: 15,
+        fontWeight: "600",
+        color: "#000",
+    },
+    sizeValueContainer: {
+        backgroundColor: "#fff",
+        width: 65,
+        height: 40,
         borderRadius: 10,
-        borderColor: "#D9D9D9",
-        borderWidth: 1.5,
-        width: "100%",
-        paddingVertical: 10,
-        paddingHorizontal: 10,
-        marginTop: 15,
+        justifyContent: "center",
         alignItems: "center",
-        justifyContent: "space-between"
-
-    }
+        marginHorizontal: 5
+    },
+    inputContainer: {
+        backgroundColor: '#fff',
+        height: 42,
+        borderRadius: 10,
+        borderColor: "grey",
+        borderWidth: .5,
+        flexDirection: "row",
+        alignItems: 'center',
+        marginBottom: 15,
+    },
+    textInput: {
+        flex: 1,
+        marginLeft: 10,
+    },
+    title: {
+        fontSize: 15,
+        fontWeight: '700',
+        marginBottom: 3,
+    },
+    subtitle: {
+        fontSize: 13,
+        marginBottom: 5,
+    },
 });
