@@ -19,9 +19,10 @@ import { router } from 'expo-router';
 import RadioButton from '@/components/RadioButton';
 import Feather from '@expo/vector-icons/Feather';
 import Entypo from '@expo/vector-icons/Entypo';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
-export default function DeliveryAddress() {
+export default function AddDeliveryAddress() {
 
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -32,55 +33,13 @@ export default function DeliveryAddress() {
         <SafeAreaView style={{ flex: 1 }}>
             <HeaderExtra header='Delivery Address' />
             <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20, flex: 1 }}>
-                <View style={styles.container}>
-                    <View style={styles.icon}>
-                        <Feather name="home" size={22} color="#0C775D" />
-                    </View>
-                    <View style={styles.optionsContainer}>
-                        <Text style={styles.title}>Home Address</Text>
-                        <Text style={styles.subtitle}>123 Main Street, Anytown, Ghana</Text>
-                    </View>
-                    <View style={styles.icon1}>
-                        <RadioButton />
-                    </View>
-                </View>
-                <View style={styles.container}>
-                    <View style={styles.icon}>
-                        <Ionicons name="location-outline" size={22} color="#0C775D" />
-                    </View>
-                    <View style={styles.optionsContainer}>
-                        <Text style={styles.title}>Office Address</Text>
-                        <Text style={styles.subtitle}>123 Main Street, Anytown, Ghana</Text>
-                    </View>
-                    <View style={styles.icon1}>
-                        <RadioButton />
-                    </View>
-                </View>
-                <View style={styles.container}>
-                    <View style={styles.icon}>
-                        <Entypo name="shop" size={22} color="#0C775D" />
-                    </View>
-                    <View style={styles.optionsContainer}>
-                        <Text style={styles.title}>Shop Address</Text>
-                        <Text style={styles.subtitle}>123 Main Street, Anytown, Ghana</Text>
-                    </View>
-                    <View style={styles.icon1}>
-                        <RadioButton />
-                    </View>
-                </View>
-                <View style={{ justifyContent: "center", alignItems: "center" }}>
-                    <Pressable style={styles.addButton} onPress={() => { router.push('/(modals)address') }}>
-                        <View style={{ flexDirection: "row", alignItems: "center" }}>
-                            <Ionicons name="add-circle-outline" size={26} color="#0C775D" />
-                            <Text style={[styles.subtitle, { marginLeft: 10 }]}>Add Address</Text>
-                        </View>
-                        <MaterialIcons name="arrow-forward-ios" size={22} color="grey" />
-                    </Pressable>
-                </View>
+                <KeyboardAwareScrollView>
+
+                </KeyboardAwareScrollView>
             </ScrollView>
             <View style={styles.btnContainer}>
-                <TouchableOpacity activeOpacity={.5} style={styles.btn} onPress={() => { router.replace('/checkout') }}>
-                    <Text style={styles.text}>Proceed To Payment</Text>
+                <TouchableOpacity activeOpacity={.5} style={styles.btn} onPress={() => { router.replace('/delivery') }}>
+                    <Text style={styles.text}>Save Address</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView >

@@ -28,9 +28,9 @@ export default function Checkout() {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <HeaderExtra header='Delivery Address' />
+            <HeaderExtra header='Checkout' />
             <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20, flex: 1 }}>
-                <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { router.navigate('/(modals)delivery') }}>
+                <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { router.navigate('/delivery') }}>
                     <View style={styles.icon}>
                         <Ionicons name="location-outline" size={22} color="#0C775D" />
                     </View>
