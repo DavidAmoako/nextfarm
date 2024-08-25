@@ -10,7 +10,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import React from 'react'
 import CategoryScroll from '@/components/CategoryScroll';
 import HeaderSearch from '@/components/HeaderSearch';
-import { router, Router } from 'expo-router';
+import { router } from 'expo-router';
 
 export default function Search() {
 

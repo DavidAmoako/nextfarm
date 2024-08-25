@@ -9,7 +9,7 @@ import {
 import React from 'react'
 import { useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
-import { router, Router } from 'expo-router'
+import { router } from 'expo-router'
 import ProductCard1 from '@/components/ProductCard1';
 import HeaderSearchExtra from '@/components/HeaderSearchExtra';
 import data from '@/Data/data.json'

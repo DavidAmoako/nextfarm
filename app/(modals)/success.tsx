@@ -5,7 +5,8 @@ import {
     StyleSheet,
     Text,
     Pressable,
-    View
+    View,
+    Vibration
 } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -18,8 +19,9 @@ export default function Success() {
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
-                    Alert.alert('Modal has been closed.');
+                    Alert.alert('Successful.');
                     setModalVisible(!modalVisible);
+                    Vibration.vibrate();
                 }}>
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>

@@ -58,7 +58,7 @@ export default function ShopProfileScreen() {
                         <SimpleLineIcons name="present" size={24} color="black" style={{ marginHorizontal: 10 }} />
                         <Text style={styles.actionText}>Wishlist</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={.3} style={styles.actionButton} onPress={() => { router.replace('/signIn') }}>
+                    <TouchableOpacity activeOpacity={.3} style={styles.actionButton} onPress={() => { router.replace('/signIn'); router.dismissAll() }}>
                         <MaterialIcons name="logout" size={24} color="black" style={{ marginHorizontal: 10 }} />
                         <Text style={styles.actionText}>Logout</Text>
                     </TouchableOpacity>

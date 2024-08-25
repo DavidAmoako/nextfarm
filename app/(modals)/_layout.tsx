@@ -11,6 +11,7 @@ export default function Layout() {
             <Stack.Screen name="items" options={{}} />
             <Stack.Screen name="product" options={{}} />
             <Stack.Screen name="checkout" options={{}} />
+            <Stack.Screen name="delivery" options={{}} />
             <Stack.Screen name="success" options={{}} />
         </Stack>
     );

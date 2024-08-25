@@ -19,7 +19,7 @@ import HeaderExtra from '@/components/HeaderExtra';
 import { router } from 'expo-router';
 
 
-export default function Checkout() {
+export default function DeliveryAddress() {
 
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -28,9 +28,9 @@ export default function Checkout() {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <HeaderExtra header='Delivery Address' />
+            <HeaderExtra header='Checkout' />
             <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20, flex: 1 }}>
-                <TouchableOpacity activeOpacity={.5} style={styles.container} onPress={() => { router.navigate('/(modals)delivery') }}>
+                <TouchableOpacity activeOpacity={.5} style={styles.container}>
                     <View style={styles.icon}>
                         <Ionicons name="location-outline" size={22} color="#0C775D" />
                     </View>
